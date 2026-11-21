@@ -412,54 +412,80 @@ import { IM } from "./images-data.js";
             '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5L16 9.5"/>',
           doc: '<path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/>',
         };
-        const G = [
-          [
-            "Reports &amp; disclosures",
-            [
-              [
-                "fin",
-                "Financial",
-                "Annual reports, half-yearly financial results and related party transactions.",
-                U,
-              ],
-              [
-                "pie",
-                "Shareholding pattern",
-                "Quarterly details of who holds our shares.",
-                U + "shareholding_pattern",
-              ],
-              [
-                "mega",
-                "Public notices",
-                "Statutory notices and announcements.",
-                U + "public_notices",
-              ],
-            ],
-          ],
-          [
-            "Governance &amp; compliance",
-            [
-              [
-                "cal",
-                "Meetings",
-                "Notices and records of board and general meetings.",
-                "meetings.html",
-              ],
-              [
-                "shield",
-                "Code of conduct",
-                "The standards of ethics we follow in every decision.",
-                "conduct.html",
-              ],
-              [
-                "doc",
-                "Policies",
-                "Corporate governance and compliance policies.",
-                "policies.html",
-              ],
-            ],
-          ],
-        ];
+        
+
+const G = [
+  [
+    "Reports &amp; disclosures",
+    [
+      [
+        "fin",
+        "Financial",
+        "Annual reports, half-yearly financial results and related party transactions.",
+        "investors.html",
+      ],
+      [
+        "pie",
+        "Shareholding pattern",
+        "Quarterly details of who holds our shares.",
+        "investors.html",
+      ],
+      [
+        "mega",
+        "Public notices",
+        "Statutory notices and announcements.",
+        "investors.html",
+      ],
+    ],
+  ],
+  [
+    "Governance &amp; compliance",
+    [
+      [
+        "cal",
+        "Meetings",
+        "Notices and records of board and general meetings.",
+        "investors.html",
+      ],
+      [
+        "shield",
+        "Code of conduct",
+        "The standards of ethics we follow in every decision.",
+        "investors.html",
+      ],
+      [
+        "doc",
+        "Policies",
+        "Corporate governance and compliance policies.",
+        "investors.html",
+      ],
+    ],
+  ],
+];
+
+
+$("#tiles").innerHTML = G.map(
+  (g) =>
+    '<div class="ivg"><h4>' +
+    g[0] +
+    "</h4>" +
+    g[1]
+      .map(
+        (a) =>
+          '<a class="ivr" href="' +
+          a[3] +
+          '"><span class="ivi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
+          ic[a[0]] +
+          '</svg></span><span><b>' +
+          a[1] +
+          '</b><small>' +
+          a[2] +
+          '</small></span><i>→</i></a>'
+      )
+      .join("") +
+    "</div>"
+).join("");
+
         $("#tiles").innerHTML = G.map(
           (g) =>
             '<div class="ivg"><h4>' +
