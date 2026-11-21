@@ -1,0 +1,1401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light" />
+    <title>Products | Shanti Guru Industries</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="pp">
+    <div id="bar"></div>
+    <div id="cur"></div>
+    <nav>
+      <a
+        class="logo"
+        href="index.html"
+        aria-label="Shanti Guru Industries, home"
+        ><span class="lm" aria-hidden="true">SG</span
+        ><b>Shanti <i>Guru</i> Industries</b></a
+      ><a class="l" href="company.html">Company</a
+      ><a class="l on" href="products.html">Products</a
+      ><a class="l" href="board.html">Board of Directors</a
+      ><a class="l" href="investors.html">Investors Desk</a
+      ><a class="btn p" href="contact.html">Contact Us</a>
+    </nav>
+    <header class="pb">
+      <div class="pbi" style="--bg: url(images/products-banner.jpg)"></div>
+      <div class="w">
+        <div class="crumb"><a href="index.html">Home</a> / Products</div>
+        <span class="eye">Our Portfolio</span>
+        <h1>Our <em>Products</em></h1>
+        <p>
+          Four product categories, with details of every product and an enquiry
+          form on each.
+        </p>
+      </div>
+      <span class="pbw" aria-hidden="true">PRODUCTS</span>
+    </header>
+    <style>
+      .pbi {
+        opacity: 0.55 !important;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      #shop {
+        padding: clamp(34px, 5vw, 64px) 0 30px;
+        min-height: 70vh;
+      }
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 14px;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tab {
+        font:
+          700 0.84rem Manrope,
+          system-ui,
+          sans-serif;
+        border: 1px solid var(--ln);
+        background: var(--ink2);
+        color: var(--paper);
+        border-radius: 999px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+      .tab:hover {
+        border-color: var(--sa);
+        color: var(--sa);
+      }
+      .tab[aria-pressed="true"] {
+        background: var(--paper);
+        color: #fff;
+        border-color: var(--paper);
+      }
+      .tab em {
+        font-style: normal;
+        opacity: 0.6;
+        margin-left: 7px;
+        font-weight: 600;
+      }
+      .srch {
+        margin-left: auto;
+        position: relative;
+        flex: 0 1 280px;
+        min-width: 200px;
+      }
+      .srch input {
+        width: 100%;
+        box-sizing: border-box;
+        font:
+          500 0.9rem Manrope,
+          system-ui,
+          sans-serif;
+        border: 1px solid var(--ln);
+        border-radius: 999px;
+        padding: 11px 18px 11px 42px;
+        background: var(--ink2);
+        color: var(--paper);
+        outline: 0;
+        transition: 0.25s;
+      }
+      .srch input:focus {
+        border-color: var(--sa);
+        box-shadow: 0 0 0 3px rgba(31, 122, 77, 0.15);
+      }
+      .srch svg {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 17px;
+        height: 17px;
+        color: var(--mut);
+      }
+      .lh {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px 24px;
+        margin: 6px 0 20px;
+      }
+      .lh h2 {
+        font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+        margin: 0;
+      }
+      .lh h2 em {
+        color: var(--sa);
+      }
+      .lh span {
+        color: var(--mut);
+        font-size: 0.88rem;
+      }
+      .ci {
+        background: var(--ink2);
+        border: 1px solid var(--ln);
+        border-left: 4px solid var(--sa);
+        border-radius: 14px;
+        padding: 16px 20px;
+        margin-bottom: 26px;
+        color: var(--mut);
+        font-size: 0.92rem;
+      }
+      .ci b {
+        display: block;
+        margin-top: 8px;
+        color: var(--ch);
+        font-size: 0.82rem;
+      }
+      .gr {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+        gap: 22px;
+      }
+      .pc2 {
+        background: var(--ink2);
+        border: 1px solid var(--ln);
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+          box-shadow 0.35s,
+          border-color 0.35s;
+        animation: pin 0.55s both cubic-bezier(0.2, 0.8, 0.2, 1);
+        animation-delay: calc(var(--k) * 50ms);
+      }
+      @keyframes pin {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .pc2:hover {
+        transform: translateY(-5px);
+        border-color: var(--c);
+        box-shadow: 0 22px 44px -24px rgba(22, 34, 27, 0.38);
+      }
+      .pim {
+        position: relative;
+        aspect-ratio: 1/1;
+        padding: 0;
+        border: 0;
+        cursor: pointer;
+        width: 100%;
+        display: block;
+        background: color-mix(in srgb, var(--c) 40%, #fff);
+        overflow: hidden;
+      }
+      .pim img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .pc2:hover .pim img {
+        transform: scale(1.06);
+      }
+      .tg {
+        z-index: 2;
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        font:
+          800 0.64rem Manrope,
+          system-ui,
+          sans-serif;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.93);
+        color: var(--paper);
+        padding: 6px 11px;
+        border-radius: 999px;
+      }
+      .tg.mf {
+        background: var(--paper);
+        color: #fff;
+      }
+      .pcb {
+        padding: 16px 18px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 1;
+      }
+      .pcb small,
+      .pdm small {
+        color: var(--sa);
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.68rem;
+      }
+      .pcb h3 {
+        font-size: 1.4rem;
+        margin: 0;
+        cursor: pointer;
+      }
+      .pcb h3:hover {
+        color: var(--sa);
+      }
+      .pcb p {
+        margin: 0;
+        color: var(--mut);
+        font-size: 0.86rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp:3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .ch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 8px 0 2px;
+      }
+      .ch span {
+        font-size: 0.7rem;
+        font-weight: 700;
+        border: 1px solid var(--ln);
+        border-radius: 6px;
+        padding: 4px 9px;
+      }
+      .pr2 {
+        margin-top: auto;
+        padding-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+      .pr2 b {
+        font:
+          800 1.05rem Manrope,
+          system-ui,
+          sans-serif;
+      }
+      .pr2 span {
+        font-size: 0.72rem;
+        color: var(--mut);
+      }
+      .pa {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .pa .btn,
+      .pa .bg2 {
+        margin: 0;
+        padding: 11px 8px;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: 800;
+        font-family: Manrope, system-ui, sans-serif;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+      .pa .btn {
+        background: var(--sa);
+        color: #fff;
+      }
+      .pa .btn:hover {
+        background: var(--ch);
+        transform: none;
+      }
+      .pa .bg2 {
+        background: transparent;
+        border: 1px solid var(--ln);
+        color: var(--paper);
+      }
+      .pa .bg2:hover {
+        border-color: var(--sa);
+        color: var(--sa);
+      }
+      .nores {
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--mut);
+        border: 1px dashed var(--ln);
+        border-radius: 20px;
+      }
+      .back {
+        font:
+          700 0.84rem Manrope,
+          system-ui,
+          sans-serif;
+        background: transparent;
+        border: 1px solid var(--ln);
+        border-radius: 999px;
+        padding: 9px 18px;
+        cursor: pointer;
+        color: var(--paper);
+        transition: 0.25s;
+      }
+      .back:hover {
+        border-color: var(--sa);
+        color: var(--sa);
+      }
+      .cr2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 16px;
+        margin-bottom: 26px;
+        font-size: 0.84rem;
+        color: var(--mut);
+      }
+      .cr2 a {
+        color: var(--mut);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .cr2 a:hover {
+        color: var(--sa);
+      }
+      .pd {
+        display: grid;
+        grid-template-columns: minmax(0, 400px) minmax(0, 1fr) minmax(0, 370px);
+        gap: 34px;
+        align-items: start;
+        animation: pin 0.5s both;
+      }
+      .pdi {
+        position: sticky;
+        top: 92px;
+        aspect-ratio: 4/5;
+        border-radius: 22px;
+        overflow: hidden;
+        background: color-mix(in srgb, var(--c) 40%, #fff);
+        border: 1px solid var(--ln);
+      }
+      .pdi img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .pdm {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-width: 0;
+      }
+      .pdm h2 {
+        font-size: clamp(2rem, 3.6vw, 3rem);
+        margin: 0;
+      }
+      .pdm .ab {
+        margin: 0;
+        color: var(--mut);
+        font-size: 1rem;
+      }
+      .prc {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 6px 14px;
+        padding: 14px 0;
+        border-top: 1px solid var(--ln);
+        border-bottom: 1px solid var(--ln);
+      }
+      .prc b {
+        font:
+          800 1.6rem Manrope,
+          system-ui,
+          sans-serif;
+      }
+      .prc span {
+        color: var(--mut);
+        font-size: 0.85rem;
+      }
+      .spec {
+        margin: 0;
+        display: grid;
+      }
+      .spec div {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--ln);
+        font-size: 0.92rem;
+      }
+      .spec dt {
+        font-weight: 800;
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding-top: 2px;
+      }
+      .spec dd {
+        margin: 0;
+        color: var(--mut);
+      }
+      .wn {
+        font-size: 0.82rem;
+        color: var(--mut);
+        border-left: 3px solid var(--ch);
+        padding-left: 12px;
+      }
+      .eq {
+        position: sticky;
+        top: 92px;
+        background: var(--ink2);
+        border: 1px solid var(--ln);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 20px 40px -28px rgba(22, 34, 27, 0.35);
+      }
+      .eq h3 {
+        font-size: 1.6rem;
+        margin: 0 0 4px;
+      }
+      #efw > p {
+        margin: 0 0 16px;
+        color: var(--mut);
+        font-size: 0.84rem;
+        line-height: 1.5;
+      }
+      .frm {
+        display: grid;
+        gap: 12px;
+      }
+      .fr2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .fd {
+        display: block;
+      }
+      .fd > span {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--mut);
+        margin-bottom: 5px;
+      }
+      .fd input,
+      .fd select,
+      .fd textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font:
+          500 0.9rem Manrope,
+          system-ui,
+          sans-serif;
+        color: var(--paper);
+        background: var(--ink);
+        border: 1px solid var(--ln);
+        border-radius: 10px;
+        padding: 11px 13px;
+        outline: 0;
+        transition: 0.25s;
+      }
+      .fd input:focus,
+      .fd select:focus,
+      .fd textarea:focus {
+        border-color: var(--sa);
+        box-shadow: 0 0 0 3px rgba(31, 122, 77, 0.15);
+      }
+      .fd textarea {
+        resize: vertical;
+        min-height: 78px;
+      }
+      .qty {
+        display: flex;
+        border: 1px solid var(--ln);
+        border-radius: 10px;
+        background: var(--ink);
+        overflow: hidden;
+      }
+      .qty button {
+        width: 40px;
+        border: 0;
+        background: transparent;
+        font-size: 1.15rem;
+        cursor: pointer;
+        color: var(--paper);
+      }
+      .qty button:hover {
+        background: var(--ln);
+      }
+      .qty input {
+        border: 0 !important;
+        border-radius: 0 !important;
+        text-align: center;
+        box-shadow: none !important;
+        padding: 11px 2px;
+      }
+      .ag {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 0.78rem;
+        color: var(--mut);
+        background: rgba(200, 85, 61, 0.08);
+        border: 1px solid rgba(200, 85, 61, 0.25);
+        padding: 11px 13px;
+        border-radius: 10px;
+        line-height: 1.45;
+      }
+      .ag input {
+        margin-top: 2px;
+        accent-color: var(--sa);
+        width: 18px;
+        height: 18px;
+        flex: none;
+        padding: 0;
+      }
+      .sb {
+        width: 100%;
+        margin: 4px 0 0;
+        padding: 14px;
+        font-size: 0.9rem;
+        background: var(--sa);
+        color: #fff;
+        border: 0;
+        border-radius: 10px;
+        font-weight: 800;
+        font-family: Manrope, system-ui, sans-serif;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+      .sb:hover {
+        background: var(--ch);
+      }
+      .eq small.n {
+        display: block;
+        text-align: center;
+        color: var(--mut);
+        font-size: 0.74rem;
+        margin-top: 8px;
+      }
+      .ok {
+        display: none;
+        text-align: center;
+        padding: 26px 6px;
+      }
+      .ok.on {
+        display: block;
+      }
+      .ok i {
+        display: grid;
+        place-items: center;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: var(--sa);
+        color: #fff;
+        font-style: normal;
+        font-size: 1.6rem;
+        margin: 0 auto 14px;
+      }
+      .ok h4 {
+        font:
+          400 1.6rem Fraunces,
+          Georgia,
+          serif;
+        margin: 0 0 8px;
+      }
+      .ok p {
+        color: var(--mut);
+        margin: 0 0 16px;
+        font-size: 0.88rem;
+      }
+      .rl {
+        margin-top: 60px;
+      }
+      .rl h3 {
+        font-size: 1.8rem;
+        margin: 0 0 20px;
+      }
+      @media (max-width: 1100px) {
+        .pd {
+          grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+        }
+        .eq {
+          grid-column: 1/-1;
+          position: static;
+        }
+      }
+      @media (max-width: 760px) {
+        .pd {
+          grid-template-columns: 1fr;
+        }
+        .pdi {
+          position: static;
+          aspect-ratio: 4/3;
+        }
+        .srch {
+          margin-left: 0;
+          flex: 1 1 100%;
+        }
+        .fr2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pc2,
+        .pd {
+          animation: none;
+        }
+      }
+    </style>
+    <section id="shop"><div class="w" id="sv"></div></section>
+    <div class="warn" id="products">
+      Statutory warning: smoking is injurious to health. Tobacco products are
+      intended for adult consumers only.
+    </div>
+    <section>
+      <div class="w">
+        <span class="eye rv">Two business lines</span>
+        <h2 class="rv">Distribute and <em>manufacture</em></h2>
+        <div class="g3">
+          <div class="card rv">
+            <h3 style="font-size: 1.45rem">Distributed brands</h3>
+            <p>
+              ESSE cigarettes (Himalaya, Change, Prime, Special Gold) and Imli
+              imli confectionery (Spicy Imli and Masala Imli), supplied across
+              South India.
+            </p>
+          </div>
+          <div class="card rv">
+            <h3 style="font-size: 1.45rem">Manufactured by us</h3>
+            <p>
+              Pan masala in 10 g pouches under our own brand, and soya chunks, a
+              plant-based protein food product made by us.
+            </p>
+          </div>
+          <div class="card rv">
+            <h3 style="font-size: 1.45rem">Pack formats</h3>
+            <p>
+              Imli  is packed in 40-piece boxes and pan masala in 10 g
+              pouches, suited to retail counters and trade supply.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="alt">
+      <div class="w">
+        <span class="eye rv">FAQ</span>
+        <h2 class="rv">Questions about our <em>products</em></h2>
+        <div class="fqs rv">
+          <details class="fq">
+            <summary>Where do you distribute?</summary>
+            <div class="fa">
+              <p>
+                Our ESSE range is distributed across South India. For other
+                regions or bulk enquiries, please contact our team.
+              </p>
+            </div>
+          </details>
+          <details class="fq">
+            <summary>Which products do you make yourself?</summary>
+            <div class="fa">
+              <p>
+                Pan masala under our own brand and soya chunks are manufactured
+                by us.
+              </p>
+            </div>
+          </details>
+          <details class="fq">
+            <summary>How do I become a trade partner?</summary>
+            <div class="fa">
+              <p>
+                Open the Contact page, choose “Business / trade enquiry” and
+                send us your details. Our team replies by email.
+              </p>
+            </div>
+          </details>
+          <details class="fq">
+            <summary>Are tobacco products sold to everyone?</summary>
+            <div class="fa">
+              <p>
+                No. Tobacco products are intended for adult consumers only, and
+                smoking is injurious to health.
+              </p>
+            </div>
+          </details>
+          <details class="fq">
+            <summary>What are Imli products?</summary>
+            <div class="fa">
+              <p>
+                Imli is an imli (tamarind) confectionery range, available as
+                Spicy Imli and Masala Imli in 40-piece boxes.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <div class="w">
+      <div class="cta rv">
+        <h3>
+          Interested in distribution?<br /><span
+            style="
+              font-size: 0.5em;
+              font-family: Manrope, system-ui, sans-serif;
+            "
+            >Talk to us about trade supply.</span
+          >
+        </h3>
+        <a class="btn" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <footer class="ft">
+      <div class="w">
+        <div class="ftg">
+          <div class="ftb">
+            <b class="ftlogo">Shanti <i>Guru</i> Industries</b>
+            <p>
+              Agro-based food products and fast moving consumer goods, trading
+              from Chennai since 2010. Formerly RCL Retail Limited, listed on
+              the SME Platform of BSE Limited.
+            </p>
+            <span class="ftbadge">BSE SME &middot; 534708</span>
+          </div>
+          <div class="ftc">
+            <h4>Explore</h4>
+            <a href="company.html">Company</a
+            ><a href="products.html">Products</a
+            ><a href="board.html">Board of Directors</a
+            ><a href="investors.html">Investors Desk</a
+            ><a href="contact.html">Contact Us</a>
+          </div>
+          <div class="ftc">
+            <h4>Investors</h4>
+            <a
+              href="https://shantiguruindustries.com/"
+              target="_blank"
+              rel="noopener"
+              >Investor page &#8599;</a
+            ><a href="investors.html">Documents &amp; filings</a
+            ><span>CIN: L52330TN2010PLC077507</span
+            ><span>ISIN: INE892L01019</span>
+          </div>
+          <div class="ftc">
+            <h4>Contact</h4>
+            <span
+              >Sapna Trade Centre, 10th Floor, 10B/2, No. 109, P.H. Road,
+              Chennai, Tamil Nadu 600084</span
+            ><a href="mailto:rclretail@gmail.com">rclretail@gmail.com</a
+            ><a href="tel:+914448508024">+91 44 4850 8024</a>
+          </div>
+        </div>
+        <div class="ftbar">
+          <span
+            >&copy; 2026 Shanti Guru Industries Limited (formerly RCL Retail
+            Limited). All rights reserved.</span
+          ><a
+            class="ftup"
+            href="index.html"
+            onclick="
+              scrollTo({ top: 0, behavior: 'smooth' });
+              return false;
+            "
+            >Back to top &uarr;</a
+          >
+        </div>
+      </div>
+    </footer>
+   <script type="module">
+  import { IM } from "./images-data.js";
+
+  const STORE = "./images/store.jpg";
+      const $ = (s) => document.querySelector(s),
+        mk = (a, f) => a.map(f).join("");
+      const CATS = [
+        {
+          id: "cig",
+          n: "Cigarettes",
+          t: "<em>Cigarettes</em>",
+          intro:
+            "ESSE super-slim cigarettes, distributed by us across South India. KT&amp;G, the maker of ESSE, describes it as the world&rsquo;s number one ultra-slim cigarette brand by sales (company statement, February 2024).",
+          note: "Statutory warning: smoking is injurious to health. For adult consumers only.",
+        },
+        {
+          id: "imli",
+          n: "Imli",
+          t: "<em>Imli</em>",
+          intro:
+            "Tamarind (imli) candy in 40-piece boxes, in two flavours: Spicy Imli and Masala Imli. Distributed by us across South India.",
+        },
+        {
+          id: "pan",
+          n: "Pan Masala",
+          t: "Pan <em>Masala</em>",
+          intro:
+            "Premium pan masala under our own brand, made by us and sold in 10 g pouches.",
+        },
+        {
+          id: "soya",
+          n: "Soya Chunks",
+          t: "Soya <em>Chunks</em>",
+          intro: "A plant-based protein food product made by us.",
+        },
+      ];
+      const P = [
+        {
+          k: "esse-himalaya",
+          n: "Himalaya Winter",
+          b: "ESSE",
+          c: 0,
+          line: 0,
+          chips: ["20 per pack", "American blend"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about:
+            "ESSE Himalaya Winter is a slim-format ESSE cigarette in an icy pineapple flavour variant, as printed on the pack.",
+          tag: "ESSE &middot; Cigarette",
+          rows: [
+            [
+              "Speciality",
+              "Icy pineapple flavour variant; American blend (both printed on the pack).",
+            ],
+            [
+              "Quantity",
+              "20 filter cigarettes per pack (printed on the pack).",
+            ],
+            [
+              "Brand standing",
+              "Part of the ESSE range, which KT&amp;G reports has passed 900 billion sticks in cumulative sales.",
+            ],
+            ["Availability", "Distributed across South India."],
+          ],
+        },
+        {
+          k: "esse-change",
+          n: "Change",
+          b: "ESSE",
+          c: 0,
+          line: 0,
+          chips: ["Flavour capsule", "4 mg variant"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about:
+            "ESSE Change is the range KT&amp;G launched in 2013 and describes as the world&rsquo;s first super-slim cigarette with a flavour capsule in the filter.",
+          tag: "ESSE &middot; Cigarette",
+          rows: [
+            [
+              "Speciality",
+              "Capsule in the filter: the taste starts mild and turns apple-mint fresh once the capsule is popped (KT&amp;G, 2013).",
+            ],
+            [
+              "Variant",
+              "4 mg variant, as printed on the pack. KT&amp;G lists ESSE Change 4mg at 4.0 mg tar and 0.3 mg nicotine.",
+            ],
+            ["Quantity", "Pack size on enquiry."],
+            ["Availability", "Distributed across South India."],
+          ],
+        },
+        {
+          k: "esse-prime",
+          n: "Prime",
+          b: "ESSE",
+          c: 0,
+          line: 0,
+          chips: ["Duty Free pack"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about:
+            "ESSE Prime is an ESSE cigarette; the pack in our range is marked &ldquo;Duty Free&rdquo; on its side tab.",
+          tag: "ESSE &middot; Cigarette",
+          rows: [
+            [
+              "Speciality",
+              "Duty Free marked pack, in the ESSE Prime blue-and-white livery.",
+            ],
+            ["Quantity", "Pack size on enquiry."],
+            ["Availability", "Distributed across South India."],
+          ],
+        },
+        {
+          k: "esse-special-gold",
+          n: "Special Gold",
+          b: "ESSE",
+          c: 0,
+          line: 0,
+          chips: ["Super-slim", "American blend"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about:
+            "ESSE Special Gold is a super-slim ESSE cigarette in a gold pack, printed &ldquo;American Blend&rdquo; and &ldquo;Made in Korea&rdquo;.",
+          tag: "ESSE &middot; Cigarette",
+          rows: [
+            [
+              "Speciality",
+              "Super-slim format with an American blend. KT&amp;G has described the Special Gold line as using premium tobacco leaf and a three-layer charcoal filter.",
+            ],
+            ["Quantity", "Pack size on enquiry."],
+            ["Availability", "Distributed across South India."],
+          ],
+        },
+        {
+          k: "imli-spicy-imli",
+          n: "Spicy Imli",
+          b: "Imli",
+          c: 1,
+          line: 0,
+          chips: ["40 pieces", "240 g"],
+          price: ["MRP &#8377;200", "Per 40-piece box, inclusive of all taxes"],
+          about: "A spicy tamarind candy, packed in a box of 40 pieces.",
+          tag: "Imli &middot; Imli",
+          rows: [
+            [
+              "Products used",
+              "Tamarind, salt, chilli powder, curry leaves and edible oil, plus other ingredients (see the pack for the full list).",
+            ],
+            [
+              "Speciality",
+              "Spicy flavour; the pack says it pairs best with drinks.",
+            ],
+            ["Quantity", "40 pieces per box; 240 g net weight; 6 g per piece."],
+            [
+              "MRP",
+              "&#8377;200 per box, inclusive of all taxes (printed on the pack).",
+            ],
+            [
+              "Shelf life",
+              "Best before twelve months from the manufacturing date.",
+            ],
+          ],
+        },
+        {
+          k: "imli-masala-imli",
+          n: "Masala Imli",
+          b: "Imli",
+          c: 1,
+          line: 0,
+          chips: ["40 pieces", "Sweet &amp; spicy"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about:
+            "A sweet and spicy masala tamarind candy, packed in a box of 40 pieces.",
+          tag: "Imli &middot; Imli",
+          rows: [
+            [
+              "Products used",
+              "Tamarind-based; see the pack for the full ingredient list.",
+            ],
+            [
+              "Speciality",
+              "Sweet and sour with a spicy finish: the pack calls it the traditional flavour of sweet and spicy.",
+            ],
+            ["Quantity", "40 pieces per box."],
+            ["Availability", "Distributed across South India."],
+          ],
+        },
+        {
+          k: "pan-masala",
+          n: "Pan Masala",
+          b: "Our brand",
+          c: 2,
+          line: 1,
+          chips: ["10 g pouch", "Own brand"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about: "Premium pan masala under our own brand, made by us.",
+          tag: "Our brand &middot; Pan masala",
+          rows: [
+            [
+              "Products used",
+              "Ingredients are listed on the pouch label. Ask us for the product specification sheet.",
+            ],
+            [
+              "Speciality",
+              "Premium positioning, in a gold-trimmed pouch with a crown mark.",
+            ],
+            ["Quantity", "10 g net weight per pouch."],
+          ],
+        },
+        {
+          k: "soya-chunks",
+          n: "Soya Chunks",
+          b: "Food product",
+          c: 3,
+          line: 1,
+          chips: ["Plant protein", "Made by us"],
+          price: ["Price on request", "Trade and retail pricing on enquiry"],
+          about:
+            "Soya chunks are dried, textured soya protein pieces that soak up the flavour of whatever they are cooked in. A plant-based protein food product made by us.",
+          tag: "Food product &middot; Soya",
+          rows: [
+            [
+              "Made from",
+              "Soya, typically defatted soy flour, shaped and dried into chunks.",
+            ],
+            [
+              "Speciality",
+              "Protein-rich and plant-based; a meat alternative for vegetarian cooking.",
+            ],
+            [
+              "How to use",
+              "Soak in hot water until soft, squeeze out the water, then add to curries, biryani, pulao or stir-fries.",
+            ],
+            ["Pack size", "On enquiry."],
+          ],
+        },
+      ];
+      const PC = {
+        "esse-himalaya": "#2c3e5b",
+        "esse-change": "#135b86",
+        "esse-special-gold": "#675332",
+        "pan-masala": "#500f8a",
+        "esse-prime": "#674f32",
+        "soya-chunks": "#7c4e1d",
+        "imli-spicy-imli": "#703f29",
+        "imli-masala-imli": "#566d2c",
+      };
+      (() => {
+        const V = $("#sv");
+        let cat = "all",
+          q = "",
+          view = null;
+        const tobacco = (i) => P[i].b === "ESSE";
+        const top = () => {
+          const r = document.getElementById("shop").getBoundingClientRect();
+          scrollTo({
+            top: Math.max(0, scrollY + r.top - 70),
+            behavior: "smooth",
+          });
+        };
+        const card = (x, i, k) =>
+          `<article class="pc2" style="--c:${PC[x.k]};--k:${k}"><button class="pim" type="button" data-v="${i}" aria-label="View ${x.b} ${x.n}"><span class="tg${x.line ? " mf" : ""}">${x.line ? "Made by us" : "Distributed"}</span><img src="${IM[x.k]}" alt="${x.b} ${x.n} pack" loading="lazy"></button><div class="pcb"><small>${x.tag}</small><h3 data-v="${i}">${x.n}</h3><p>${x.about}</p><div class="ch">${x.chips.map((c) => `<span>${c}</span>`).join("")}</div><div class="pr2"><b>${x.price[0]}</b><span>${x.price[1]}</span></div><div class="pa"><button class="bg2" type="button" data-v="${i}">View details</button><button class="btn" type="button" data-e="${i}">Enquire now</button></div></div></article>`;
+        const list = () => {
+          const t = q.trim().toLowerCase();
+          const L = P.map((x, i) => [x, i]).filter(
+            ([x]) =>
+              (cat === "all" || x.c === +cat) &&
+              (!t ||
+                (x.n + " " + x.b + " " + x.tag + " " + CATS[x.c].n)
+                  .toLowerCase()
+                  .replace(/&amp;|&middot;/g, " ")
+                  .includes(t)),
+          );
+          const tabs = [["all", "All products", P.length]].concat(
+            CATS.map((c, i) => [
+              String(i),
+              c.n,
+              P.filter((x) => x.c === i).length,
+            ]),
+          );
+          const C = cat === "all" ? null : CATS[+cat];
+          V.innerHTML = `<div class="bar"><div class="tabs" role="group" aria-label="Filter by category">${tabs.map((t) => `<button class="tab" type="button" data-f="${t[0]}" aria-pressed="${cat === t[0]}">${t[1]}<em>${t[2]}</em></button>`).join("")}</div><label class="srch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search products" aria-label="Search products" value="${q.replace(/"/g, "&quot;")}"></label></div>
+<div class="lh"><h2>${C ? C.t : "All <em>products</em>"}</h2><span>${L.length} ${L.length === 1 ? "product" : "products"}</span></div>
+${C ? `<div class="ci">${C.intro}${C.note ? `<b>${C.note}</b>` : ""}</div>` : ""}
+<div class="gr">${L.length ? L.map(([x, i], k) => card(x, i, k)).join("") : '<div class="nores">No products match your search. Try a different name.</div>'}</div>`;
+          if (q) {
+            const e = $("#q");
+            e.focus();
+            e.setSelectionRange(q.length, q.length);
+          }
+        };
+        const detail = (i, focus) => {
+          const x = P[i],
+            C = CATS[x.c],
+            rel = P.map((y, j) => [y, j]).filter(
+              ([y, j]) => j !== i && y.c === x.c,
+            );
+          const more = (
+            rel.length
+              ? rel
+              : P.map((y, j) => [y, j]).filter(([y, j]) => j !== i)
+          ).slice(0, 4);
+          V.innerHTML = `<div class="cr2"><button class="back" type="button" data-back>&larr; All products</button><span><a data-home>Products</a> / <a data-cat="${x.c}">${C.n}</a> / ${x.n}</span></div>
+<div class="pd" style="--c:${PC[x.k]}"><div class="pdi"><span class="tg${x.line ? " mf" : ""}">${x.line ? "Made by us" : "Distributed"}</span><img src="${IM[x.k]}" alt="${x.b} ${x.n} pack"></div>
+<div class="pdm"><small>${x.tag}</small><h2>${x.n}</h2><p class="ab">${x.about}</p><div class="prc"><b>${x.price[0]}</b><span>${x.price[1]}</span></div><div class="ch">${x.chips.map((c) => `<span>${c}</span>`).join("")}</div><dl class="spec">${x.rows.map((r) => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join("")}</dl>${tobacco(i) ? '<p class="wn">Statutory warning: smoking is injurious to health. Tobacco products are intended for adult consumers only.</p>' : ""}</div>
+<aside class="eq" id="eq"><div id="efw"><h3>Enquire now</h3><p>About <b>${x.b === "ESSE" ? "ESSE " : x.b === "Imli" ? "Imli " : ""}${x.n}</b>. Our team replies by email.</p>
+<form class="frm" id="ef"><div class="fr2"><div class="fd"><span>Quantity</span><div class="qty"><button type="button" data-q="-1" aria-label="Decrease">&minus;</button><input name="qty" id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" data-q="1" aria-label="Increase">+</button></div></div><label class="fd"><span>Enquiry type</span><select name="type"><option>Retail purchase</option><option>Distribution / trade</option><option>Bulk order</option><option>Price and availability</option></select></label></div>
+<div class="fr2"><label class="fd"><span>Your name</span><input name="n" required autocomplete="name"></label><label class="fd"><span>Phone</span><input name="p" type="tel" required autocomplete="tel"></label></div>
+<div class="fr2"><label class="fd"><span>Email</span><input name="e" type="email" required autocomplete="email"></label><label class="fd"><span>City</span><input name="c" autocomplete="address-level2"></label></div>
+<label class="fd"><span>Message (optional)</span><textarea name="m" placeholder="Pack size, delivery location, anything else we should know"></textarea></label>
+${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confirm I am an adult consumer. Tobacco products are for adults only and smoking is injurious to health.</span></label>' : ""}
+<button class="sb" type="submit">Send enquiry &rarr;</button><small class="n">Opens your email app to send the enquiry to our team.</small></form></div>
+<div class="ok" id="ok"><i>&check;</i><h4>Almost done</h4><p>Your email app should have opened with the enquiry filled in. Just press send.</p><button class="back" type="button" data-back>Back to all products</button></div></aside></div>
+<div class="rl"><h3>${rel.length ? "More in " + C.n : "More products"}</h3><div class="gr">${more.map(([y, j], k) => card(y, j, k)).join("")}</div></div>`;
+          top();
+          if (focus)
+            setTimeout(() => {
+              const f = $("#ef");
+              f && f.n.focus({ preventScroll: true });
+            }, 500);
+        };
+        const go = (i, f) => {
+            view = i;
+            detail(i, f);
+          },
+          home = (c) => {
+            view = null;
+            if (c !== undefined) cat = String(c);
+            list();
+            top();
+          };
+        V.addEventListener("click", (e) => {
+          const t = e.target,
+            g = (s) => t.closest(s);
+          let b;
+          if ((b = g("[data-e]"))) return go(+b.dataset.e, true);
+          if ((b = g("[data-v]"))) return go(+b.dataset.v);
+          if ((b = g("[data-f]"))) {
+            cat = b.dataset.f;
+            return list();
+          }
+          if (g("[data-back]")) return home();
+          if ((b = g("[data-cat]"))) return home(b.dataset.cat);
+          if (g("[data-home]")) return home("all");
+          if ((b = g("[data-q]"))) {
+            const i = $("#qty");
+            i.value = Math.max(1, (+i.value || 1) + +b.dataset.q);
+          }
+        });
+        V.addEventListener("input", (e) => {
+          if (e.target.id === "q") {
+            q = e.target.value;
+            const p = e.target.selectionStart;
+            list();
+          }
+        });
+        V.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const F = e.target,
+            d = new FormData(F),
+            a = P[view];
+          const body = [
+            "Product: " +
+              (a.b === "Our brand" || a.b === "Food product" ? "" : a.b + " ") +
+              a.n,
+            "Quantity: " + d.get("qty"),
+            "Enquiry type: " + d.get("type"),
+            "",
+            "Name: " + d.get("n"),
+            "Phone: " + d.get("p"),
+            "Email: " + d.get("e"),
+            "City: " + (d.get("c") || "-"),
+            "",
+            "Message: " + (d.get("m") || "-"),
+          ].join("\n");
+          $("#efw").hidden = true;
+          $("#ok").classList.add("on");
+          window.open(
+            "mailto:rclretail@gmail.com?subject=" +
+              encodeURIComponent("Product enquiry: " + a.n) +
+              "&body=" +
+              encodeURIComponent(body),
+            "_blank",
+          );
+        });
+        list();
+      })();
+      // --- new: explore cards, strip, counters, banner parallax, scroll-driven process line ---
+      (() => {
+        const cl = (v) => Math.min(1, Math.max(0, v)),
+          rm = matchMedia("(prefers-reduced-motion:reduce)").matches;
+        const xs = document.getElementById("xs");
+        if (xs) {
+          const g = (c) => `background:${c};`;
+          xs.innerHTML = [
+            [
+              "Company",
+              "Our story, mission, vision and journey since 2010.",
+              "company",
+              `background-image:url(${STORE})`,
+            ],
+            [
+              "Products",
+              "Eight products across distribution and own manufacturing.",
+              "products",
+              `background-color:#566d2c;background-image:url(${IM["imli-masala-imli"]});background-size:contain;background-repeat:no-repeat;background-position:center 30%`,
+            ],
+            [
+              "Board of Directors",
+              "The people and committees guiding our governance.",
+              "board",
+              "background-image:url(images/about.jpg)",
+            ],
+            [
+              "Investors Desk",
+              "Reports, results and filings for BSE scrip 534708.",
+              "investors",
+              "background-image:linear-gradient(135deg,#1f7a4d,#16221b)",
+            ],
+          ]
+            .map(
+              (a) =>
+                `<a class="xc" href="${a[2]}.html"><i style="${a[3]}"></i><span>${a[1]}</span><b>${a[0]} <u>&rarr;</u></b></a>`,
+            )
+            .join("");
+        }
+        const sp = document.getElementById("strip");
+        if (sp)
+          sp.innerHTML = [0, 1]
+            .map(() =>
+              [
+                "imli-spicy-imli",
+                "imli-masala-imli",
+                "pan-masala",
+                "soya-chunks",
+              ]
+                .map((k) => `<img src="${IM[k]}" alt="" loading="lazy">`)
+                .join(""),
+            )
+            .join("");
+        const cn = new IntersectionObserver(
+          (es) =>
+            es.forEach((e) => {
+              if (!e.isIntersecting) return;
+              cn.unobserve(e.target);
+              const T = +e.target.dataset.c,
+                t0 = performance.now(),
+                f = (t) => {
+                  const k = rm ? 1 : Math.min(1, (t - t0) / 1500);
+                  e.target.textContent = Math.round(
+                    T * (1 - Math.pow(1 - k, 3)),
+                  );
+                  k < 1 && requestAnimationFrame(f);
+                };
+              requestAnimationFrame(f);
+            }),
+          { threshold: 0.4 },
+        );
+        document.querySelectorAll("[data-c]").forEach((b) => cn.observe(b));
+        const pb = document.querySelector(".pbi"),
+          pw = document.querySelector(".pbw"),
+          ps = [...document.querySelectorAll(".pr")];
+        const u = () => {
+          const y = scrollY,
+            vh = innerHeight;
+          if (!rm) {
+            if (pb) {
+              pb.style.transform = `translate3d(0,${y * 0.22}px,0) scale(${1 + Math.min(y, 800) / 3500})`;
+              pw.style.transform = `translateX(${-y * 0.3}px)`;
+            }
+            if (sp) {
+              const r = sp.parentNode.getBoundingClientRect(),
+                k = cl((vh - r.top) / (vh + r.height));
+              sp.style.transform = `translateX(${(0.1 - k * 0.7) * sp.scrollWidth * 0.5}px)`;
+            }
+          }
+          ps.forEach((p) => {
+            const r = p.getBoundingClientRect(),
+              g = cl((vh * 0.7 - r.top) / r.height),
+              l = [...p.children];
+            p.style.setProperty("--g", g);
+            l.forEach((e, i) =>
+              e.classList.toggle("on", g > (i + 0.2) / l.length),
+            );
+          });
+        };
+        addEventListener("scroll", u, { passive: true });
+        addEventListener("resize", u);
+        u();
+      })();
+
+      // progress, reveal, counters, cursor, card glow
+      const bar = $("#bar"),
+        hs = $("#hs"),
+        trk = $("#trk");
+      const sc = () => {
+        bar.style.transform = `scaleX(${scrollY / (document.body.scrollHeight - innerHeight)})`;
+      };
+      addEventListener("scroll", sc, { passive: true });
+      addEventListener("resize", sc);
+      sc();
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (!e.isIntersecting) return;
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+            const n = e.target.querySelectorAll("[data-n]");
+            n.forEach((b) => {
+              const T = +b.dataset.n,
+                t0 = performance.now(),
+                st = T > 9999 ? 0 : 2000;
+              const f = (t) => {
+                const k = Math.min(1, (t - t0) / 1400);
+                b.textContent = Math.round(
+                  st + (T - st) * (1 - Math.pow(1 - k, 3)),
+                );
+                k < 1 && requestAnimationFrame(f);
+              };
+              requestAnimationFrame(f);
+            });
+          }),
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll(".rv").forEach((el, i) => {
+        el.style.transitionDelay = (i % 4) * 70 + "ms";
+        io.observe(el);
+      });
+      const cur = $("#cur");
+      addEventListener("pointermove", (e) => {
+        cur.style.left = e.clientX - 17 + "px";
+        cur.style.top = e.clientY - 17 + "px";
+        cur.classList.toggle("h", !!e.target.closest("a,button,.pc,.card"));
+        const c = e.target.closest(".card");
+        if (c) {
+          const b = c.getBoundingClientRect();
+          c.style.setProperty("--x", e.clientX - b.left + "px");
+          c.style.setProperty("--y", e.clientY - b.top + "px");
+        }
+      });
+      document.addEventListener("pointermove", (e) => {
+        const c = e.target.closest(".pc");
+        if (c) {
+          const b = c.getBoundingClientRect();
+          c.style.transform = `perspective(700px) rotateY(${((e.clientX - b.left) / b.width - 0.5) * 10}deg) rotateX(${-((e.clientY - b.top) / b.height - 0.5) * 8}deg)`;
+        }
+      });
+      document.addEventListener("pointerout", (e) => {
+        const c = e.target.closest && e.target.closest(".pc");
+        if (c) c.style.transform = "";
+      });
+    </script>
+    <script>
+      (() => {
+        if (
+          !matchMedia("(hover:hover)").matches ||
+          matchMedia("(prefers-reduced-motion:reduce)").matches
+        )
+          return;
+        document.addEventListener("pointermove", (e) => {
+          const c = e.target.closest && e.target.closest(".pc2");
+          if (!c) return;
+          const r = c.getBoundingClientRect(),
+            x = (e.clientX - r.left) / r.width - 0.5,
+            y = (e.clientY - r.top) / r.height - 0.5;
+          c.style.setProperty("--ry", (x * 9).toFixed(1) + "deg");
+          c.style.setProperty("--rx", (-y * 9).toFixed(1) + "deg");
+          c.style.setProperty("--mx", ((x + 0.5) * 100).toFixed(0) + "%");
+          c.style.setProperty("--my", ((y + 0.5) * 100).toFixed(0) + "%");
+        });
+        document.addEventListener("pointerout", (e) => {
+          const c = e.target.closest && e.target.closest(".pc2");
+          if (c && !c.contains(e.relatedTarget)) {
+            c.style.setProperty("--rx", "0deg");
+            c.style.setProperty("--ry", "0deg");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+Shanti Guru Industries multi-page site. Open index.html. Pages: index, company, products, board, investors, financial, shareholding, notices, meetings, conduct, policies, contact. See documents/README.txt for adding documents. Shared: style.css, docs.js (document lists), images-data.js (product textures), images/.
