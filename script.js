@@ -412,80 +412,54 @@ import { IM } from "./images-data.js";
             '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5L16 9.5"/>',
           doc: '<path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/>',
         };
-        
-
-const G = [
-  [
-    "Reports &amp; disclosures",
-    [
-      [
-        "fin",
-        "Financial",
-        "Annual reports, half-yearly financial results and related party transactions.",
-        "investors.html",
-      ],
-      [
-        "pie",
-        "Shareholding pattern",
-        "Quarterly details of who holds our shares.",
-        "investors.html",
-      ],
-      [
-        "mega",
-        "Public notices",
-        "Statutory notices and announcements.",
-        "investors.html",
-      ],
-    ],
-  ],
-  [
-    "Governance &amp; compliance",
-    [
-      [
-        "cal",
-        "Meetings",
-        "Notices and records of board and general meetings.",
-        "investors.html",
-      ],
-      [
-        "shield",
-        "Code of conduct",
-        "The standards of ethics we follow in every decision.",
-        "investors.html",
-      ],
-      [
-        "doc",
-        "Policies",
-        "Corporate governance and compliance policies.",
-        "investors.html",
-      ],
-    ],
-  ],
-];
-
-
-$("#tiles").innerHTML = G.map(
-  (g) =>
-    '<div class="ivg"><h4>' +
-    g[0] +
-    "</h4>" +
-    g[1]
-      .map(
-        (a) =>
-          '<a class="ivr" href="' +
-          a[3] +
-          '"><span class="ivi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
-          ic[a[0]] +
-          '</svg></span><span><b>' +
-          a[1] +
-          '</b><small>' +
-          a[2] +
-          '</small></span><i>→</i></a>'
-      )
-      .join("") +
-    "</div>"
-).join("");
-
+        const G = [
+          [
+            "Reports &amp; disclosures",
+            [
+              [
+                "fin",
+                "Financial",
+                "Annual reports, half-yearly financial results and related party transactions.",
+                "financial.html",
+              ],
+              [
+                "pie",
+                "Shareholding pattern",
+                "Quarterly details of who holds our shares.",
+                "shareholding.html",
+              ],
+              [
+                "mega",
+                "Public notices",
+                "Statutory notices and announcements.",
+                "notices.html",
+              ],
+            ],
+          ],
+          [
+            "Governance &amp; compliance",
+            [
+              [
+                "cal",
+                "Meetings",
+                "Notices and records of board and general meetings.",
+                "meetings.html",
+              ],
+              [
+                "shield",
+                "Code of conduct",
+                "The standards of ethics we follow in every decision.",
+                "conduct.html",
+              ],
+              [
+                "doc",
+                "Policies",
+                "Corporate governance and compliance policies.",
+                "policies.html",
+              ],
+            ],
+          ],
+        ];
         $("#tiles").innerHTML = G.map(
           (g) =>
             '<div class="ivg"><h4>' +
@@ -496,7 +470,7 @@ $("#tiles").innerHTML = G.map(
                 (a) =>
                   '<a class="ivr" href="' +
                   a[3] +
-                  '" target="_blank" rel="noopener"><span class="ivi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
+                  '"><span class="ivi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
                   ic[a[0]] +
                   '</svg></span><span class="ivt"><span class="ivh3">' +
                   a[1] +
@@ -1247,12 +1221,16 @@ $("#tiles").innerHTML = G.map(
         );
         gl.clearColor(0, 0, 0, 0);
         /* ---- scene ---- */
-        const R = 3.1,
+        const TILT = 0.37,
+          FOVD = 22,
+          FACE = 0.55,
+          CY = -0.5,
+          R = 3.5,
           PK = 1.05,
           HY = 1.2,
-          GS = 1.05,
-          GY = 2.1,
+          GS = 0.86,
           RY = -0.45,
+          GY = RY,
           imgs = Object.values(IM),
           sideC = [0.141, 0.208, 0.169],
           bx = mk(box(1.15 * PK, 1.44 * PK, 0.14 * PK)),
@@ -1262,6 +1240,112 @@ $("#tiles").innerHTML = G.map(
           wf = mk(wire(sphere(24, 16)), gl.LINES),
           rg = mk(ringG(0.05, 0.062, 32));
         const aniso = gl.getExtension("EXT_texture_filter_anisotropic");
+        /* name plates: a small label under every pack, front and back, so the names read from either side */
+        const NM = {
+          "esse-himalaya": ["ESSE", "Himalaya Winter"],
+          "esse-change": ["ESSE", "Change"],
+          "esse-prime": ["ESSE", "Prime"],
+          "esse-special-gold": ["ESSE", "Special Gold"],
+          "imli-spicy-imli": ["Imli", "Spicy Imli"],
+          "imli-masala-imli": ["Imli", "Masala Imli"],
+          "pan-masala": ["Our brand", "Pan Masala"],
+          "soya-chunks": ["Food product", "Soya Chunks"],
+        };
+        const lab = (k) => {
+          const nm = NM[k] || ["", k],
+            c = document.createElement("canvas");
+          c.width = 512;
+          c.height = 128;
+          const x = c.getContext("2d"),
+            r = 18,
+            W = 512,
+            Hh = 128,
+            m = 4;
+          x.beginPath();
+          x.moveTo(m + r, m);
+          x.arcTo(W - m, m, W - m, Hh - m, r);
+          x.arcTo(W - m, Hh - m, m, Hh - m, r);
+          x.arcTo(m, Hh - m, m, m, r);
+          x.arcTo(m, m, W - m, m, r);
+          x.closePath();
+          x.fillStyle = "#16221b";
+          x.fill();
+          x.lineWidth = 4;
+          x.strokeStyle = "#e2a62b";
+          x.stroke();
+          x.textAlign = "center";
+          x.textBaseline = "middle";
+          x.fillStyle = "#f0b43c";
+          x.font = "700 24px Inter,Arial,sans-serif";
+          x.fillText(nm[0].toUpperCase(), W / 2, 36);
+          let fs = 50;
+          x.font = "600 " + fs + "px Fraunces,Georgia,serif";
+          while (x.measureText(nm[1]).width > W - 56 && fs > 20) {
+            fs -= 2;
+            x.font = "600 " + fs + "px Fraunces,Georgia,serif";
+          }
+          x.fillStyle = "#faf6ee";
+          x.fillText(nm[1], W / 2, 82);
+          const t = gl.createTexture();
+          gl.bindTexture(gl.TEXTURE_2D, t);
+          gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+          gl.texImage2D(
+            gl.TEXTURE_2D,
+            0,
+            gl.RGBA,
+            gl.RGBA,
+            gl.UNSIGNED_BYTE,
+            c,
+          );
+          gl.generateMipmap(gl.TEXTURE_2D);
+          gl.texParameteri(
+            gl.TEXTURE_2D,
+            gl.TEXTURE_MIN_FILTER,
+            gl.LINEAR_MIPMAP_LINEAR,
+          );
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+          if (aniso)
+            gl.texParameterf(
+              gl.TEXTURE_2D,
+              aniso.TEXTURE_MAX_ANISOTROPY_EXT,
+              Math.min(
+                8,
+                gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT),
+              ),
+            );
+          return t;
+        };
+        const plate = (back) => {
+            const w = 0.74,
+              h = 0.19,
+              y = -0.99,
+              z = (0.07 * PK + 0.005) * (back ? -1 : 1),
+              sx = back ? -1 : 1,
+              g = G0();
+            g.p.push(
+              -w * sx,
+              y - h,
+              z,
+              w * sx,
+              y - h,
+              z,
+              w * sx,
+              y + h,
+              z,
+              -w * sx,
+              y + h,
+              z,
+            );
+            for (let i = 0; i < 4; i++) g.n.push(0, 0, back ? -1 : 1);
+            g.u.push(0, 0, 1, 0, 1, 1, 0, 1);
+            g.i.push(0, 1, 2, 0, 2, 3);
+            return mk(g);
+          },
+          plF = plate(false),
+          plB = plate(true),
+          KEYS = Object.keys(IM);
         const packs = imgs.map((src, i) => {
           const t = gl.createTexture();
           gl.bindTexture(gl.TEXTURE_2D, t);
@@ -1311,7 +1395,12 @@ $("#tiles").innerHTML = G.map(
               );
           };
           im.src = src;
-          return { a: (i / imgs.length) * Math.PI * 2, s: 1, t };
+          return {
+            a: (i / imgs.length) * Math.PI * 2,
+            s: 1,
+            t,
+            lt: lab(KEYS[i]),
+          };
         });
         const GR = 1,
           ll = (la, lo, r) => {
@@ -1403,40 +1492,143 @@ $("#tiles").innerHTML = G.map(
           wx = 0,
           wy = 0,
           VP = F(16),
+          IV = F(16),
           hov = -1,
           nd = null;
         H.addEventListener("pointermove", (e) => {
-          const b = H.getBoundingClientRect();
-          px = ((e.clientX - b.left) / b.width) * 2 - 1;
-          py = -(((e.clientY - b.top) / b.height) * 2 - 1);
+          const b = cv.getBoundingClientRect();
+          px = Math.max(
+            -1,
+            Math.min(1, ((e.clientX - b.left) / b.width) * 2 - 1),
+          );
+          py = Math.max(
+            -1,
+            Math.min(1, -(((e.clientY - b.top) / b.height) * 2 - 1)),
+          );
           nd = [px, py];
         });
         H.addEventListener("pointerleave", () => (nd = null));
         new IntersectionObserver((e) => (vis = e[0].isIntersecting)).observe(H);
+        const nv = document.querySelector("nav"),
+          mqe = H.querySelector(".mq"),
+          side = matchMedia("(min-width:1000px) and (min-aspect-ratio:1/1)");
+        /* yaw of a card at ring angle th (0 = front): front half only part-follows the ring so side cards stay readable; back half swings round to show its back */
+        const H2 = Math.PI / 2,
+          yw = (th) => {
+            const m = Math.abs(th),
+              y =
+                m <= H2
+                  ? FACE * m
+                  : FACE * H2 + ((m - H2) * (Math.PI - FACE * H2)) / H2;
+            return th < 0 ? -y : y;
+          };
+        /* project every extreme point of the scene (cards + name plates at their real yaw, both rings, globe) to get its on-screen extents */
+        const ext = (M) => {
+          let x0 = 1e9,
+            x1 = -1e9,
+            y0 = 1e9,
+            y1 = -1e9;
+          const pp = (x, y, z) => {
+            const cw = M[3] * x + M[7] * y + M[11] * z + M[15],
+              nx = (M[0] * x + M[4] * y + M[8] * z + M[12]) / cw,
+              ny = (M[1] * x + M[5] * y + M[9] * z + M[13]) / cw;
+            if (nx < x0) x0 = nx;
+            if (nx > x1) x1 = nx;
+            if (ny < y0) y0 = ny;
+            if (ny > y1) y1 = ny;
+          };
+          for (let k = 0; k < 48; k++) {
+            const th = -Math.PI + (k / 48) * Math.PI * 2,
+              sa = Math.sin(th),
+              ca = Math.cos(th),
+              yv = yw(th),
+              sy = Math.sin(yv),
+              cy = Math.cos(yv),
+              cx = sa * R,
+              cz = ca * R;
+            for (const lx of [-0.74, 0.74])
+              for (const ly of [-1.28, 0.86])
+                for (const lz of [-0.08, 0.08])
+                  pp(cx + lx * cy + lz * sy, RY + ly, cz - lx * sy + lz * cy);
+            pp(sa * (R + 0.15), RY - HY, ca * (R + 0.15));
+            pp(sa * (R + 0.15), RY + HY, ca * (R + 0.15));
+            pp(sa * GS, GY + GS, ca * GS);
+            pp(sa * GS, GY - GS, ca * GS);
+          }
+          return [x0, x1, y0, y1];
+        };
+        const FX = 0.93,
+          FY = 0.9,
+          DOWN = 0.09; /* scene fills FX of the stage width / FY of its height; DOWN nudges it a little below dead-centre (0 = exact centre) */
         const rs = () => {
-          const w = H.clientWidth,
-            h = H.clientHeight,
+          const nh = nv ? nv.offsetHeight : 76;
+          if (side.matches) {
+            /* side by side (wide screens): stage = the clear area between the nav and the ticker strip */
+            const bt = mqe ? mqe.offsetHeight : 56;
+            cv.style.top = nh + "px";
+            cv.style.height = Math.max(220, H.clientHeight - nh - bt) + "px";
+          } else {
+            /* stacked (phones, portrait tablets, short landscape): scene sits under the nav and the text follows below it */
+            const sh = Math.round(
+              Math.max(
+                260,
+                Math.min(H.clientWidth * 0.95, 580, innerHeight * 0.58),
+              ),
+            );
+            cv.style.top = nh + "px";
+            cv.style.height = sh + "px";
+            H.style.setProperty("--glt", nh + sh + 8 + "px");
+          }
+          cv.style.bottom = "auto";
+          const w = cv.clientWidth || H.clientWidth,
+            h = cv.clientHeight || H.clientHeight,
             pr = Math.min(devicePixelRatio || 1, 2);
           asp = w / h;
-          dist =
-            w <= 768
-              ? Math.max(15, (w <= 480 ? 14.5 : 17) / asp)
-              : Math.max(10.8, 18.4 / asp);
           cv.width = Math.max(1, Math.round(w * pr));
           cv.height = Math.max(1, Math.round(h * pr));
-          VP = mul(
-            persp((38 * Math.PI) / 180, asp, 0.1, 50),
-            tr(0, -0.6, -dist),
-          );
-          vh = 2 * dist * Math.tan((19 * Math.PI) / 180);
+          /* auto-fit: move the camera until the whole scene fills the stage, whatever its shape */
+          const P = persp((FOVD * Math.PI) / 180, asp, 0.5, 300),
+            mkv = (d) => mm(P, tr(0, 0, -d), rx(TILT), tr(0, -CY, 0));
+          let d = 14,
+            e;
+          for (let i = 0; i < 6; i++) {
+            VP = mkv(d);
+            e = ext(VP);
+            d = Math.min(
+              150,
+              Math.max(
+                6,
+                d * Math.max((e[1] - e[0]) / 2 / FX, (e[3] - e[2]) / 2 / FY),
+              ),
+            );
+          }
+          VP = mkv(d);
+          e = ext(VP);
+          dist = d;
+          /* centre it (equal space left/right and above/below), then nudge it a little lower if there is room */
+          const hh = (e[3] - e[2]) / 2,
+            cx = (e[1] + e[0]) / 2,
+            cy =
+              (e[3] + e[2]) / 2 + Math.min(DOWN, Math.max(0, (1 - hh) * 0.7));
+          VP[0] -= cx * VP[3];
+          VP[4] -= cx * VP[7];
+          VP[8] -= cx * VP[11];
+          VP[12] -= cx * VP[15];
+          VP[1] -= cy * VP[3];
+          VP[5] -= cy * VP[7];
+          VP[9] -= cy * VP[11];
+          VP[13] -= cy * VP[15];
+          IV = inv(VP);
+          vh = 2 * dist * Math.tan(((FOVD / 2) * Math.PI) / 180);
           vw = vh * asp;
-          wx = w <= 768 ? 0 : vw * 0.16;
-          wy = w <= 768 ? vh * (w <= 480 ? 0.255 : 0.235) : 0.12;
+          wx = 0;
+          wy = 0;
         };
-        new ResizeObserver(rs).observe(H);
+        [cv, nv, H].forEach((x) => x && new ResizeObserver(rs).observe(x));
+        addEventListener("resize", rs);
         rs();
         const t0 = performance.now(),
-          TF = Math.tan((19 * Math.PI) / 180),
+          TF = Math.tan(((FOVD / 2) * Math.PI) / 180),
           HB = [0.575 * PK, 0.72 * PK, 0.07 * PK];
         // ray vs pack (oriented box, tested in the pack's local space)
         const hit = (M, O, D) => {
@@ -1473,24 +1665,41 @@ $("#tiles").innerHTML = G.map(
             ringM = mm(wg, tr(0, RY, 0), ry(t * 0.16 + mx * 1.3)),
             gt = mm(wg, tr(0, GY, 0), rz(0.41)),
             globe = mm(gt, ry(Math.PI + 0.17), sc(GS));
-          const pm = (p) => {
-            const i = packs.indexOf(p);
-            return mm(
-              ringM,
-              tr(
-                Math.sin(p.a) * R,
-                Math.sin(t * 0.9 + i * 1.3) * 0.1,
-                Math.cos(p.a) * R,
-              ),
-              ry(p.a),
-              sc(p.s),
-            );
-          };
+          /* cards keep orbiting, but each one only half-follows the ring's turn, so side cards stay readable instead of going edge-on */
+          const rb = mm(wg, tr(0, RY, 0)),
+            rot = t * 0.16 + mx * 1.3,
+            pm = (p) => {
+              const i = packs.indexOf(p),
+                th =
+                  ((((p.a + rot + Math.PI) % (2 * Math.PI)) + 2 * Math.PI) %
+                    (2 * Math.PI)) -
+                  Math.PI;
+              return mm(
+                rb,
+                tr(
+                  Math.sin(th) * R,
+                  Math.sin(t * 0.9 + i * 1.3) * 0.1,
+                  Math.cos(th) * R,
+                ),
+                ry(yw(th)),
+                sc(p.s),
+              );
+            };
           // hover: nearest pack under the pointer grows a little
           hov = -1;
           if (nd) {
-            const O = [0, 0.6, dist],
-              D = [nd[0] * TF * asp, nd[1] * TF, -1];
+            const up = (z) => {
+                const v = [0, 1, 2, 3].map(
+                  (j) =>
+                    IV[j] * nd[0] +
+                    IV[4 + j] * nd[1] +
+                    IV[8 + j] * z +
+                    IV[12 + j],
+                );
+                return [v[0] / v[3], v[1] / v[3], v[2] / v[3]];
+              },
+              O = up(-1),
+              D = V.sub(up(1), O);
             let best = 1e9;
             packs.forEach((p, i) => {
               const h = hit(pm(p), O, D);
@@ -1515,6 +1724,8 @@ $("#tiles").innerHTML = G.map(
             draw(bx, M, { c: sideC, lit: 1 }, 0, 24);
             draw(bx, M, { tex: p.t, lit: 1, emi: 0.14 }, 24, 6);
             draw(bx, M, { tex: p.t, lit: 1, emi: 0.14 }, 30, 6);
+            draw(plF, M, { tex: p.lt });
+            draw(plB, M, { tex: p.lt });
           });
           draw(s48, globe, { c: [0.071, 0.239, 0.169] });
           nodes.forEach((n) =>

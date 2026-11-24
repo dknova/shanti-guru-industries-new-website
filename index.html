@@ -8,6 +8,9 @@
     />
     <meta name="color-scheme" content="light" />
     <title>Shanti Guru Industries Limited</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -17,14 +20,52 @@
       <a
         class="logo"
         href="index.html"
-        aria-label="Shanti Guru Industries, home"
-        ><span class="lm" aria-hidden="true">SG</span
-        ><b>Shanti <i>Guru</i> Industries</b></a
+        aria-label="Shanti Guru Industries Limited, home"
+        ><b>Shanti <i>Guru</i> Industries Limited</b></a
+      ><a class="l on" href="index.html">Home</a
       ><a class="l" href="company.html">Company</a
       ><a class="l" href="products.html">Products</a
-      ><a class="l" href="board.html">Board of Directors</a
-      ><a class="l" href="investors.html">Investors Desk</a
-      ><a class="btn p" href="contact.html">Contact Us</a>
+      ><a class="l" href="board.html">Board of Directors</a>
+      <div class="ndd">
+        <a class="l" href="investors.html">Investors Desk</a
+        ><button
+          class="ndc"
+          type="button"
+          aria-label="Open Investors Desk menu"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          &#9662;
+        </button>
+        <div class="nmenu">
+          <div class="nmi">
+            <div class="nsub">
+              <a class="nm" href="financial.html"
+                >Financial<span class="nar">&rsaquo;</span></a
+              >
+              <div class="nfly">
+                <div class="nmi">
+                  <a class="nm" href="financial.html#annual-reports"
+                    >Annual Reports</a
+                  ><a class="nm" href="financial.html#half-yearly-results"
+                    >Half Yearly Financial Results</a
+                  ><a
+                    class="nm"
+                    href="financial.html#related-party-transactions"
+                    >Related Party Transactions</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a class="nm" href="meetings.html">Meetings</a
+            ><a class="nm" href="conduct.html">Code of Conduct</a
+            ><a class="nm" href="policies.html">Policies</a
+            ><a class="nm" href="notices.html">Public Notices</a
+            ><a class="nm" href="shareholding.html">Shareholding Pattern</a>
+          </div>
+        </div>
+      </div>
+      <a class="btn p" href="contact.html">Contact Us</a>
     </nav>
     <section id="hero">
       <canvas id="gl" aria-hidden="true"></canvas>
@@ -87,13 +128,13 @@
         <div class="bgw" id="bgw" aria-hidden="true">SINCE 2010 · CHENNAI</div>
         <div class="stats rv">
           <div>
-            <b data-n="2010">2010</b><span>Incorporated in Tamil Nadu</span>
+            <b stat-value="2010">2010</b><span>Incorporated in Tamil Nadu</span>
           </div>
           <div>
-            <b data-n="2022">2022</b><span>Renamed Shanti Guru Industries</span>
+            <b stat-value="2022">2022</b><span>Renamed Shanti Guru Industries</span>
           </div>
-          <div><b>BSE SME</b><span>Listed platform</span></div>
-          <div><b data-n="534708">534708</b><span>BSE scrip code</span></div>
+          <div><b stat-value="BSE SME">BSE SME</b><span>Listed platform</span></div>
+          <div><b stat-value="534708">534708</b><span>BSE scrip code</span></div>
         </div>
         <div style="margin-top: 130px" class="rv">
           <span class="eye">Corporate Profile</span>
@@ -162,22 +203,7 @@
         Statutory warning: smoking is injurious to health. Tobacco products are
         intended for adult consumers only.
       </div>
-      <div class="w">
-        <div class="feats" id="feats"></div>
-        <div class="cta rv">
-          <h3>
-            Interested in our products?<br /><span
-              style="
-                font-size: 0.5em;
-                font-family: Manrope, system-ui, sans-serif;
-              "
-              >Get in touch with our team for distribution and trade
-              enquiries.</span
-            >
-          </h3>
-          <a class="btn" href="contact.html">Contact Us</a>
-        </div>
-      </div>
+      <div class="w"><div class="feats" id="feats"></div></div>
     </section>
     <section id="board">
       <div class="w">
@@ -226,102 +252,37 @@
         <div class="rgl" id="tl"></div>
       </div>
     </section>
-    
-<section id="investors">
-  <div class="w">
-    <span class="eye">Investor Relations</span>
-
-    <h2 class="rv">Investors <em>Desk</em></h2>
-
-    <p class="lead rv">
-      Financial results, governance documents and shareholder information
-      for BSE SME scrip code 534708.
-    </p>
-
-    <div class="ivh rv">
-
-      <!-- Company Information -->
-      <aside class="ivc">
-        <i class="ivo" aria-hidden="true"></i>
-
-        <span class="ivk">BSE SME &middot; Scrip code</span>
-
-        <b data-n="534708">534708</b>
-
-        <dl>
-          <div>
-            <dt>Company</dt>
-            <dd>Shanti Guru Industries Limited</dd>
-          </div>
-
-          <div>
-            <dt>CIN</dt>
-            <dd>L52330TN2010PLC077507</dd>
-          </div>
-        </dl>
-
-        <a class="ivbtn" href="investors.html">
-          Explore Investors Desk &rarr;
-        </a>
-      </aside>
-
-      <!-- Investors Desk Links -->
-      <div class="ivl" id="tiles">
-
-        <a class="ivt" href="financial.html">
-          <span>01</span>
-          <b>Financial Documents</b>
-          <small>Annual reports and financial results</small>
-          <i>&rarr;</i>
-        </a>
-
-        <a class="ivt" href="shareholding.html">
-          <span>02</span>
-          <b>Shareholding Information</b>
-          <small>Shareholding patterns and reconciliation reports</small>
-          <i>&rarr;</i>
-        </a>
-
-        <a class="ivt" href="notices.html">
-          <span>03</span>
-          <b>Notices &amp; Disclosures</b>
-          <small>Company notices and statutory disclosures</small>
-          <i>&rarr;</i>
-        </a>
-
-        <a class="ivt" href="policies.html">
-          <span>04</span>
-          <b>Policies</b>
-          <small>Corporate governance policies</small>
-          <i>&rarr;</i>
-        </a>
-
-        <a class="ivt" href="meetings.html">
-          <span>05</span>
-          <b>Meeting Documents</b>
-          <small>AGM, EGM and meeting-related documents</small>
-          <i>&rarr;</i>
-        </a>
-
-        <a class="ivt" href="conduct.html">
-          <span>06</span>
-          <b>Conduct &amp; Governance</b>
-          <small>Codes of conduct and governance documents</small>
-          <i>&rarr;</i>
-        </a>
-
-        <a class="ivt" href="investors.html">
-          <span>07</span>
-          <b>All Investor Documents</b>
-          <small>Explore the complete Investors Desk</small>
-          <i>&rarr;</i>
-        </a>
-
+    <section id="investors">
+      <div class="w">
+        <span class="eye">Investor Relations</span>
+        <h2 class="rv">Investors <em>Desk</em></h2>
+        <p class="lead rv">
+          Financial results, governance documents and shareholder information
+          for BSE SME scrip code 534708.
+        </p>
+        <div class="ivh rv">
+          <aside class="ivc">
+            <i class="ivo" aria-hidden="true"></i
+            ><span class="ivk">BSE SME &middot; Scrip code</span
+            ><b data-n="534708">534708</b>
+            <dl>
+              <div>
+                <dt>Company</dt>
+                <dd>Shanti Guru Industries Limited</dd>
+              </div>
+              <div>
+                <dt>CIN</dt>
+                <dd>L52330TN2010PLC077507</dd>
+              </div>
+            </dl>
+            <a class="ivbtn" href="investors.html"
+              >Visit investor page &rarr;</a
+            >
+          </aside>
+          <div class="ivl" id="tiles"></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
     <section id="contact">
       <div class="w">
         <span class="eye">Get in Touch</span>
@@ -414,7 +375,7 @@
           </div>
           <div class="ftc">
             <h4>Explore</h4>
-            <a href="company.html">Company</a
+            <a href="index.html">Home</a><a href="company.html">Company</a
             ><a href="products.html">Products</a
             ><a href="board.html">Board of Directors</a
             ><a href="investors.html">Investors Desk</a
@@ -423,7 +384,7 @@
           <div class="ftc">
             <h4>Investors</h4>
             <a
-              href="investors.html"
+              href="https://shantiguruindustries.com/"
               target="_blank"
               rel="noopener"
               >Investor page &#8599;</a
@@ -456,8 +417,33 @@
         </div>
       </div>
     </footer>
-    
-   <script type="module" src="./script.js"></script>
-   <script type="module" src="./images-data.js"></script>
+   
+    <script type="module" src="./script.js"></script>
+    <script>
+      document.querySelectorAll("nav .ndc").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var d = b.closest(".ndd"),
+            o = d.classList.toggle("open");
+          b.setAttribute("aria-expanded", o);
+        });
+      });
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll("nav .ndd.open").forEach(function (d) {
+          if (!d.contains(e.target)) {
+            d.classList.remove("open");
+            d.querySelector(".ndc").setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+      var hh = document.getElementById("hero"),
+        nn = document.querySelector("nav");
+      function fh() {
+        if (!hh) return;
+        hh.style.paddingTop = innerWidth > 768 ? nn.offsetHeight + "px" : "";
+      }
+      fh();
+      addEventListener("resize", fh);
+      addEventListener("load", fh);
+    </script>
   </body>
 </html>

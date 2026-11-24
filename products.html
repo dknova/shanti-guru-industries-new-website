@@ -17,17 +17,55 @@
       <a
         class="logo"
         href="index.html"
-        aria-label="Shanti Guru Industries, home"
-        ><span class="lm" aria-hidden="true">SG</span
-        ><b>Shanti <i>Guru</i> Industries</b></a
+        aria-label="Shanti Guru Industries Limited, home"
+        ><b>Shanti <i>Guru</i> Industries Limited</b></a
+      ><a class="l" href="index.html">Home</a
       ><a class="l" href="company.html">Company</a
       ><a class="l on" href="products.html">Products</a
-      ><a class="l" href="board.html">Board of Directors</a
-      ><a class="l" href="investors.html">Investors Desk</a
-      ><a class="btn p" href="contact.html">Contact Us</a>
+      ><a class="l" href="board.html">Board of Directors</a>
+      <div class="ndd">
+        <a class="l" href="investors.html">Investors Desk</a
+        ><button
+          class="ndc"
+          type="button"
+          aria-label="Open Investors Desk menu"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          &#9662;
+        </button>
+        <div class="nmenu">
+          <div class="nmi">
+            <div class="nsub">
+              <a class="nm" href="financial.html"
+                >Financial<span class="nar">&rsaquo;</span></a
+              >
+              <div class="nfly">
+                <div class="nmi">
+                  <a class="nm" href="financial.html#annual-reports"
+                    >Annual Reports</a
+                  ><a class="nm" href="financial.html#half-yearly-results"
+                    >Half Yearly Financial Results</a
+                  ><a
+                    class="nm"
+                    href="financial.html#related-party-transactions"
+                    >Related Party Transactions</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a class="nm" href="meetings.html">Meetings</a
+            ><a class="nm" href="conduct.html">Code of Conduct</a
+            ><a class="nm" href="policies.html">Policies</a
+            ><a class="nm" href="notices.html">Public Notices</a
+            ><a class="nm" href="shareholding.html">Shareholding Pattern</a>
+          </div>
+        </div>
+      </div>
+      <a class="btn p" href="contact.html">Contact Us</a>
     </nav>
     <header class="pb">
-      <div class="pbi" style="--bg: url(images/products-banner.jpg)"></div>
+      <div class="pbi pat pat-products"></div>
       <div class="w">
         <div class="crumb"><a href="index.html">Home</a> / Products</div>
         <span class="eye">Our Portfolio</span>
@@ -37,7 +75,7 @@
           form on each.
         </p>
       </div>
-      <span class="pbw" aria-hidden="true">PRODUCTS</span>
+      
     </header>
     <style>
       .pbi {
@@ -264,7 +302,7 @@
         font-size: 0.86rem;
         display: -webkit-box;
         -webkit-line-clamp: 3;
-        line-clamp:3;
+        line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
@@ -664,6 +702,353 @@
           animation: none;
         }
       }
+
+      .pdm h3 {
+        font:
+          400 1.45rem Fraunces,
+          Georgia,
+          serif;
+        margin: 0 0 10px;
+      }
+      .pdm .blk {
+        padding-top: 8px;
+      }
+      .pdm .blk p {
+        margin: 0 0 10px;
+        color: var(--mut);
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+      .pdm ul.bl {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 9px;
+      }
+      .pdm ul.bl li {
+        position: relative;
+        padding-left: 26px;
+        color: var(--mut);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+      .pdm ul.bl li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 14px;
+        height: 8px;
+        border-left: 2px solid var(--sa);
+        border-bottom: 2px solid var(--sa);
+        transform: rotate(-45deg) scale(0.9);
+      }
+      .cols2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .cols2 > div {
+        background: var(--ink2);
+        border: 1px solid var(--ln);
+        border-radius: 16px;
+        padding: 18px 18px 20px;
+      }
+      .faq details {
+        border-bottom: 1px solid var(--ln);
+        padding: 12px 0;
+      }
+      .faq summary {
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.93rem;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .faq summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq summary:after {
+        content: "+";
+        color: var(--sa);
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+      .faq details[open] summary:after {
+        content: "\2212";
+      }
+      .faq details p {
+        margin: 8px 0 0;
+        color: var(--mut);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+      .eq .eqk {
+        display: block;
+        color: var(--sa);
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.68rem;
+        margin-bottom: 6px;
+      }
+      .eqp {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 14px 0;
+        margin: 12px 0 16px;
+        border-top: 1px solid var(--ln);
+        border-bottom: 1px solid var(--ln);
+      }
+      .eqp b {
+        font:
+          800 1.3rem Manrope,
+          system-ui,
+          sans-serif;
+      }
+      .eqp span {
+        font-size: 0.78rem;
+        color: var(--mut);
+      }
+      .eq .sb {
+        margin: 0;
+      }
+      .eqf {
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 8px;
+        font-size: 0.8rem;
+        color: var(--mut);
+      }
+      .eqf li {
+        padding-left: 18px;
+        position: relative;
+      }
+      .eqf li:before {
+        content: "\2022";
+        position: absolute;
+        left: 4px;
+        color: var(--sa);
+      }
+      .eqc {
+        display: grid;
+        gap: 4px;
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid var(--ln);
+        font-size: 0.82rem;
+      }
+      .eqc a {
+        color: var(--paper);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .eqc a:hover {
+        color: var(--sa);
+      }
+      #em {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(14, 24, 18, 0.62);
+        backdrop-filter: blur(5px);
+        animation: emf 0.25s both;
+      }
+      #em[hidden] {
+        display: none !important;
+      }
+      @keyframes emf {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes emu {
+        from {
+          opacity: 0;
+          transform: translateY(24px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .mdb {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+        width: min(860px, 100%);
+        max-height: calc(100vh - 40px);
+        overflow: auto;
+        background: var(--ink2);
+        border-radius: 24px;
+        box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.6);
+        animation: emu 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+      .mdx {
+        position: absolute;
+        right: 14px;
+        top: 12px;
+        z-index: 3;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--ln);
+        background: var(--ink2);
+        font-size: 1.4rem;
+        line-height: 1;
+        cursor: pointer;
+        color: var(--paper);
+      }
+      .mdx:hover {
+        border-color: var(--sa);
+        color: var(--sa);
+      }
+      .mds {
+        background: color-mix(in srgb, var(--c) 22%, #fff);
+        padding: 24px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .mds img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 16px;
+        display: block;
+      }
+      .mds small {
+        color: var(--sa);
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.66rem;
+      }
+      .mds h3 {
+        font:
+          400 1.7rem Fraunces,
+          Georgia,
+          serif;
+        margin: 0;
+      }
+      .mds p {
+        margin: 0;
+        font-size: 0.84rem;
+        color: var(--mut);
+        line-height: 1.55;
+      }
+      .mds ul {
+        margin: 4px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+        font-size: 0.8rem;
+        color: var(--paper);
+      }
+      .mds li {
+        padding-left: 18px;
+        position: relative;
+      }
+      .mds li:before {
+        content: "\2713";
+        position: absolute;
+        left: 0;
+        color: var(--sa);
+        font-weight: 800;
+      }
+      .mdf {
+        padding: 28px 28px 26px;
+      }
+      .mdf h3 {
+        font:
+          400 1.8rem Fraunces,
+          Georgia,
+          serif;
+        margin: 0 40px 4px 0;
+      }
+      .mdf > p,
+      .mdf .lead2 {
+        margin: 0 0 16px;
+        color: var(--mut);
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+      @media (max-width: 760px) {
+        #em {
+          padding: 10px;
+          align-items: flex-end;
+        }
+        .mdb {
+          grid-template-columns: 1fr;
+          max-height: calc(100vh - 20px);
+          border-radius: 20px;
+        }
+        .mds {
+          display: none;
+        }
+        .mdf {
+          padding: 22px 18px;
+        }
+        .cols2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #em,
+        .mdb {
+          animation: none;
+        }
+      }
+      .mdb {
+        grid-template-columns: 1fr !important;
+        width: min(560px, 100%) !important;
+      }
+      .mds {
+        display: grid !important;
+        grid-template-columns: 64px 1fr;
+        column-gap: 14px;
+        align-items: center;
+        padding: 18px 70px 16px 24px !important;
+        gap: 0 14px !important;
+      }
+      .mds img {
+        grid-row: 1/3;
+        width: 64px !important;
+        height: 64px;
+        aspect-ratio: auto !important;
+        border-radius: 12px !important;
+      }
+      .mds small {
+        align-self: end;
+      }
+      .mds h3 {
+        align-self: start;
+        font-size: 1.3rem !important;
+      }
+      .mds p,
+      .mds ul {
+        display: none !important;
+      }
+      .fr2 {
+        grid-template-columns: 1fr !important;
+      }
+      .mdf {
+        padding: 22px 24px 24px !important;
+      }
     </style>
     <section id="shop"><div class="w" id="sv"></div></section>
     <div class="warn" id="products">
@@ -678,95 +1063,28 @@
           <div class="card rv">
             <h3 style="font-size: 1.45rem">Distributed brands</h3>
             <p>
-              ESSE cigarettes (Himalaya, Change, Prime, Special Gold) and Imli
-              imli confectionery (Spicy Imli and Masala Imli), supplied across
-              South India.
+              ESSE cigarettes (Himalaya, Change, Prime, Special Gold), supplied
+              across South India.
             </p>
           </div>
           <div class="card rv">
             <h3 style="font-size: 1.45rem">Manufactured by us</h3>
             <p>
-              Pan masala in 10 g pouches under our own brand, and soya chunks, a
+              Imli confectionery (Spicy Imli and Masala Imli), pan masala
+              in 10 g pouches under our own brand, and soya chunks, a
               plant-based protein food product made by us.
             </p>
           </div>
           <div class="card rv">
             <h3 style="font-size: 1.45rem">Pack formats</h3>
             <p>
-              Imli  is packed in 40-piece boxes and pan masala in 10 g
+              Imli is packed in 40-piece boxes and pan masala in 10 g
               pouches, suited to retail counters and trade supply.
             </p>
           </div>
         </div>
       </div>
     </section>
-    <section class="alt">
-      <div class="w">
-        <span class="eye rv">FAQ</span>
-        <h2 class="rv">Questions about our <em>products</em></h2>
-        <div class="fqs rv">
-          <details class="fq">
-            <summary>Where do you distribute?</summary>
-            <div class="fa">
-              <p>
-                Our ESSE range is distributed across South India. For other
-                regions or bulk enquiries, please contact our team.
-              </p>
-            </div>
-          </details>
-          <details class="fq">
-            <summary>Which products do you make yourself?</summary>
-            <div class="fa">
-              <p>
-                Pan masala under our own brand and soya chunks are manufactured
-                by us.
-              </p>
-            </div>
-          </details>
-          <details class="fq">
-            <summary>How do I become a trade partner?</summary>
-            <div class="fa">
-              <p>
-                Open the Contact page, choose “Business / trade enquiry” and
-                send us your details. Our team replies by email.
-              </p>
-            </div>
-          </details>
-          <details class="fq">
-            <summary>Are tobacco products sold to everyone?</summary>
-            <div class="fa">
-              <p>
-                No. Tobacco products are intended for adult consumers only, and
-                smoking is injurious to health.
-              </p>
-            </div>
-          </details>
-          <details class="fq">
-            <summary>What are Imli products?</summary>
-            <div class="fa">
-              <p>
-                Imli is an imli (tamarind) confectionery range, available as
-                Spicy Imli and Masala Imli in 40-piece boxes.
-              </p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-    <div class="w">
-      <div class="cta rv">
-        <h3>
-          Interested in distribution?<br /><span
-            style="
-              font-size: 0.5em;
-              font-family: Manrope, system-ui, sans-serif;
-            "
-            >Talk to us about trade supply.</span
-          >
-        </h3>
-        <a class="btn" href="contact.html">Contact Us</a>
-      </div>
-    </div>
     <footer class="ft">
       <div class="w">
         <div class="ftg">
@@ -781,7 +1099,7 @@
           </div>
           <div class="ftc">
             <h4>Explore</h4>
-            <a href="company.html">Company</a
+            <a href="index.html">Home</a><a href="company.html">Company</a
             ><a href="products.html">Products</a
             ><a href="board.html">Board of Directors</a
             ><a href="investors.html">Investors Desk</a
@@ -823,10 +1141,11 @@
         </div>
       </div>
     </footer>
-   <script type="module">
-  import { IM } from "./images-data.js";
 
-  const STORE = "./images/store.jpg";
+    <script type="module">
+    import { IM } from "./images-data.js";
+
+      const STORE = "images/store.jpg";
       const $ = (s) => document.querySelector(s),
         mk = (a, f) => a.map(f).join("");
       const CATS = [
@@ -843,7 +1162,7 @@
           n: "Imli",
           t: "<em>Imli</em>",
           intro:
-            "Tamarind (imli) candy in 40-piece boxes, in two flavours: Spicy Imli and Masala Imli. Distributed by us across South India.",
+            "Tamarind (imli) candy in 40-piece boxes, in two flavours: Spicy Imli and Masala Imli. Made by us and supplied across South India.",
         },
         {
           id: "pan",
@@ -956,7 +1275,7 @@
           n: "Spicy Imli",
           b: "Imli",
           c: 1,
-          line: 0,
+          line: 1,
           chips: ["40 pieces", "240 g"],
           price: ["MRP &#8377;200", "Per 40-piece box, inclusive of all taxes"],
           about: "A spicy tamarind candy, packed in a box of 40 pieces.",
@@ -986,7 +1305,7 @@
           n: "Masala Imli",
           b: "Imli",
           c: 1,
-          line: 0,
+          line: 1,
           chips: ["40 pieces", "Sweet &amp; spicy"],
           price: ["Price on request", "Trade and retail pricing on enquiry"],
           about:
@@ -1002,7 +1321,7 @@
               "Sweet and sour with a spicy finish: the pack calls it the traditional flavour of sweet and spicy.",
             ],
             ["Quantity", "40 pieces per box."],
-            ["Availability", "Distributed across South India."],
+            ["Availability", "Made by us and supplied across South India."],
           ],
         },
         {
@@ -1065,6 +1384,297 @@
         "imli-spicy-imli": "#703f29",
         "imli-masala-imli": "#566d2c",
       };
+      const X = {
+        "esse-himalaya": {
+          ov: [
+            "ESSE Himalaya Winter belongs to the ESSE range of slim-format cigarettes that Shanti Guru Industries distributes across South India. The pack identifies it as an icy pineapple flavour variant in an American blend, with 20 filter cigarettes per pack.",
+            "We supply it to trade partners and retailers through our Chennai-based distribution operation. Pricing is quoted on enquiry because it depends on the quantity and the delivery location.",
+          ],
+          hl: [
+            "Icy pineapple flavour variant, as printed on the pack",
+            "American blend",
+            "20 filter cigarettes per pack",
+            "Part of the ESSE range, which we distribute across South India",
+          ],
+          ut: "Trade information",
+          us: [
+            "Supplied to trade partners and retailers; ask about minimum order quantities.",
+            "Delivery across South India from our Chennai base.",
+            "Share your location and expected monthly volume for an accurate quote.",
+          ],
+          st: [
+            "Store in a cool, dry place away from direct sunlight and strong odours.",
+            "Keep packs in their original cartons until sale and rotate stock first in, first out.",
+            "Statutory health warnings on the pack must stay visible and unaltered.",
+          ],
+          fq: [
+            [
+              "Who can enquire about this product?",
+              "Trade partners, retailers and adult consumers. Tobacco products are for adults only.",
+            ],
+            [
+              "How is pricing decided?",
+              "Pricing is given on enquiry, based on quantity and delivery location.",
+            ],
+            [
+              "Where do you supply?",
+              "We distribute across South India. Tell us your city in the enquiry form.",
+            ],
+          ],
+        },
+        "esse-change": {
+          ov: [
+            "ESSE Change is the range KT&amp;G launched in 2013, described by the maker as the first super-slim cigarette with a flavour capsule in the filter. The pack in our range is the 4 mg variant.",
+            "Shanti Guru Industries distributes ESSE Change across South India. Pack size and pricing are shared on enquiry.",
+          ],
+          hl: [
+            "Capsule in the filter, as described by KT&amp;G",
+            "4 mg variant, as printed on the pack",
+            "Super-slim format",
+            "Distributed across South India",
+          ],
+          ut: "Trade information",
+          us: [
+            "Available to trade partners and retailers across South India.",
+            "Ask us for current pack sizes and availability.",
+            "Bulk and repeat-order enquiries are welcome.",
+          ],
+          st: [
+            "Store in a cool, dry place away from direct sunlight and strong odours.",
+            "Keep packs in their original cartons until sale and rotate stock first in, first out.",
+            "Statutory health warnings on the pack must stay visible and unaltered.",
+          ],
+          fq: [
+            [
+              "Which variant do you supply?",
+              "The 4 mg variant, as printed on the pack. Ask us if you need other pack details.",
+            ],
+            [
+              "Who can enquire?",
+              "Trade partners, retailers and adult consumers. Tobacco products are for adults only.",
+            ],
+            [
+              "How do I get a price?",
+              "Send an enquiry with your quantity and city and our team will reply by email.",
+            ],
+          ],
+        },
+        "esse-prime": {
+          ov: [
+            'ESSE Prime is part of the ESSE range we distribute. The pack in our range is marked "Duty Free" on its side tab and carries the ESSE Prime blue-and-white livery.',
+            "Pack size and pricing are given on enquiry, together with availability for your location in South India.",
+          ],
+          hl: [
+            "Duty Free marked pack",
+            "Blue-and-white ESSE Prime livery",
+            "Part of the ESSE range",
+            "Distributed across South India",
+          ],
+          ut: "Trade information",
+          us: [
+            "Supplied to trade partners and retailers.",
+            "Pack size and availability on enquiry.",
+            "Tell us your city so we can confirm delivery.",
+          ],
+          st: [
+            "Store in a cool, dry place away from direct sunlight and strong odours.",
+            "Keep packs in their original cartons until sale and rotate stock first in, first out.",
+            "Statutory health warnings on the pack must stay visible and unaltered.",
+          ],
+          fq: [
+            [
+              "What does the Duty Free marking mean?",
+              "It is printed on the side tab of the pack in our range. Contact us for the details of the specific pack you need.",
+            ],
+            [
+              "Who can enquire?",
+              "Trade partners, retailers and adult consumers. Tobacco products are for adults only.",
+            ],
+            [
+              "Where do you supply?",
+              "Across South India. Mention your city in the enquiry.",
+            ],
+          ],
+        },
+        "esse-special-gold": {
+          ov: [
+            'ESSE Special Gold is a super-slim ESSE cigarette in a gold pack, printed "American Blend" and "Made in Korea". KT&amp;G has described the Special Gold line as using premium tobacco leaf and a three-layer charcoal filter.',
+            "We distribute it across South India. Pack size and trade pricing are shared on enquiry.",
+          ],
+          hl: [
+            "Super-slim format",
+            "American blend, as printed on the pack",
+            "Gold pack, made in Korea (printed on the pack)",
+            "Distributed across South India",
+          ],
+          ut: "Trade information",
+          us: [
+            "Available to trade partners and retailers.",
+            "Ask about pack sizes, availability and repeat supply.",
+            "Share your city and expected volume for a quote.",
+          ],
+          st: [
+            "Store in a cool, dry place away from direct sunlight and strong odours.",
+            "Keep packs in their original cartons until sale and rotate stock first in, first out.",
+            "Statutory health warnings on the pack must stay visible and unaltered.",
+          ],
+          fq: [
+            ["Where is it made?", 'The pack is printed "Made in Korea".'],
+            [
+              "Who can enquire?",
+              "Trade partners, retailers and adult consumers. Tobacco products are for adults only.",
+            ],
+            [
+              "How is pricing decided?",
+              "On enquiry, based on quantity and delivery location.",
+            ],
+          ],
+        },
+        "imli-spicy-imli": {
+          ov: [
+            "Imli Spicy Imli is a spicy tamarind candy packed in a box of 40 pieces, 240 g net weight, with 6 g per piece. The pack lists tamarind, salt, chilli powder, curry leaves and edible oil among its ingredients, with the full list printed on the box.",
+            "It is a tangy, spicy snack candy made by Shanti Guru Industries and supplied across South India, with an MRP of ₹200 per box inclusive of all taxes.",
+          ],
+          hl: [
+            "40 pieces per box, 240 g net weight",
+            "Spicy tamarind flavour; the pack says it pairs best with drinks",
+            "MRP ₹200 per box, inclusive of all taxes",
+            "Best before twelve months from the manufacturing date",
+          ],
+          ut: "Ways to enjoy &amp; sell",
+          us: [
+            "Enjoy as a tangy snack on its own or alongside a drink, as the pack suggests.",
+            "Suits counter-top display at general stores, sweet shops and kiosks.",
+            "Box format makes it easy to stock and restock.",
+          ],
+          st: [
+            "Store in a cool, dry place and keep the box closed after opening.",
+            "Best before twelve months from the manufacturing date printed on the pack.",
+            "Check the pack for the full ingredient list.",
+          ],
+          fq: [
+            [
+              "What is in it?",
+              "Tamarind, salt, chilli powder, curry leaves and edible oil, plus other ingredients. See the pack for the full list.",
+            ],
+            [
+              "How many pieces are in a box?",
+              "40 pieces, 240 g net weight in total.",
+            ],
+            [
+              "What is the shelf life?",
+              "Best before twelve months from the manufacturing date.",
+            ],
+          ],
+        },
+        "imli-masala-imli": {
+          ov: [
+            "Imli Masala Imli is a tamarind candy in the traditional sweet-and-spicy flavour, packed in a box of 40 pieces. The pack describes it as sweet and sour with a spicy finish.",
+            "Made by Shanti Guru Industries and supplied across South India. Trade and retail pricing is shared on enquiry.",
+          ],
+          hl: [
+            "40 pieces per box",
+            "Sweet, sour and spicy masala flavour",
+            "Tamarind-based; full ingredient list on the pack",
+            "Made by us, supplied across South India",
+          ],
+          ut: "Ways to enjoy &amp; sell",
+          us: [
+            "A tangy snack candy to enjoy any time of day.",
+            "Suits counter-top display at general stores, sweet shops and kiosks.",
+            "Pairs with Imli Spicy Imli for a two-flavour range.",
+          ],
+          st: [
+            "Store in a cool, dry place and keep the box closed after opening.",
+            "Check the manufacturing and best-before details printed on the pack.",
+            "See the pack for the full ingredient list.",
+          ],
+          fq: [
+            [
+              "How does it taste?",
+              "Sweet and sour with a spicy finish, as described on the pack.",
+            ],
+            ["How many pieces are in a box?", "40 pieces per box."],
+            [
+              "How do I get a price?",
+              "Send an enquiry and we will reply with trade and retail pricing.",
+            ],
+          ],
+        },
+        "pan-masala": {
+          ov: [
+            "Our own-brand pan masala is made by Shanti Guru Industries and sold in 10 g pouches. The pouch is gold-trimmed and carries a crown mark, reflecting its premium positioning.",
+            "Ingredients are listed on the pouch label, and a product specification sheet is available on request. Pricing is given on enquiry.",
+          ],
+          hl: [
+            "Own brand, made by us",
+            "10 g net weight per pouch",
+            "Premium gold-trimmed pouch with crown mark",
+            "Specification sheet available on request",
+          ],
+          ut: "Trade information",
+          us: [
+            "Supplied to trade partners and retailers in South India.",
+            "Ask for the specification sheet and label details.",
+            "Tell us your expected volume for an accurate quote.",
+          ],
+          st: [
+            "Store in a cool, dry place away from moisture and direct sunlight.",
+            "Keep pouches sealed and in their outer cartons until sale.",
+            "Rotate stock first in, first out.",
+          ],
+          fq: [
+            ["Who makes it?", "We make it ourselves under our own brand."],
+            ["What is the pack size?", "10 g net weight per pouch."],
+            [
+              "Can I see the ingredients?",
+              "They are printed on the pouch label. Ask us for the specification sheet.",
+            ],
+          ],
+        },
+        "soya-chunks": {
+          ov: [
+            "Soya chunks are dried, textured soya protein pieces that soak up the flavour of whatever they are cooked in. Ours is a plant-based protein food product made by Shanti Guru Industries.",
+            "They are typically made from defatted soy flour, shaped and dried into chunks, which makes them a convenient meat alternative for vegetarian cooking. Pack sizes and pricing are given on enquiry.",
+          ],
+          hl: [
+            "Plant-based protein food product",
+            "Made by us",
+            "Easy to store and quick to prepare",
+            "Absorbs the flavour of curries, biryani and more",
+          ],
+          ut: "How to use",
+          us: [
+            "Soak in hot water until soft, then squeeze out the water.",
+            "Add to curries, biryani, pulao or stir-fries.",
+            "Cook with your usual masala so the chunks take on the flavour.",
+          ],
+          st: [
+            "Store in a cool, dry place in an airtight container after opening.",
+            "Keep away from moisture and direct sunlight.",
+            "Check the pack for the manufacturing and best-before details.",
+          ],
+          fq: [
+            [
+              "What are soya chunks made from?",
+              "Typically defatted soy flour, shaped and dried into chunks.",
+            ],
+            [
+              "How do I cook them?",
+              "Soak in hot water until soft, squeeze out the water, then add to your dish.",
+            ],
+            [
+              "What pack sizes are available?",
+              "Pack sizes are shared on enquiry. Tell us what you need.",
+            ],
+          ],
+        },
+      };
+      const SEC = (x) => {
+        const d = X[x.k];
+        const li = (a) => a.map((t) => `<li>${t}</li>`).join("");
+        return `<div class="blk"><h3>Product overview</h3>${d.ov.map((t) => `<p>${t}</p>`).join("")}</div><div class="blk"><h3>Key highlights</h3><ul class="bl">${li(d.hl)}</ul></div><div class="cols2"><div><h3>${d.ut}</h3><ul class="bl">${li(d.us)}</ul></div><div><h3>Storage &amp; handling</h3><ul class="bl">${li(d.st)}</ul></div></div><div class="blk faq"><h3>Frequently asked questions</h3>${d.fq.map((f) => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>`;
+      };
       (() => {
         const V = $("#sv");
         let cat = "all",
@@ -1122,22 +1732,11 @@ ${C ? `<div class="ci">${C.intro}${C.note ? `<b>${C.note}</b>` : ""}</div>` : ""
           ).slice(0, 4);
           V.innerHTML = `<div class="cr2"><button class="back" type="button" data-back>&larr; All products</button><span><a data-home>Products</a> / <a data-cat="${x.c}">${C.n}</a> / ${x.n}</span></div>
 <div class="pd" style="--c:${PC[x.k]}"><div class="pdi"><span class="tg${x.line ? " mf" : ""}">${x.line ? "Made by us" : "Distributed"}</span><img src="${IM[x.k]}" alt="${x.b} ${x.n} pack"></div>
-<div class="pdm"><small>${x.tag}</small><h2>${x.n}</h2><p class="ab">${x.about}</p><div class="prc"><b>${x.price[0]}</b><span>${x.price[1]}</span></div><div class="ch">${x.chips.map((c) => `<span>${c}</span>`).join("")}</div><dl class="spec">${x.rows.map((r) => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join("")}</dl>${tobacco(i) ? '<p class="wn">Statutory warning: smoking is injurious to health. Tobacco products are intended for adult consumers only.</p>' : ""}</div>
-<aside class="eq" id="eq"><div id="efw"><h3>Enquire now</h3><p>About <b>${x.b === "ESSE" ? "ESSE " : x.b === "Imli" ? "Imli " : ""}${x.n}</b>. Our team replies by email.</p>
-<form class="frm" id="ef"><div class="fr2"><div class="fd"><span>Quantity</span><div class="qty"><button type="button" data-q="-1" aria-label="Decrease">&minus;</button><input name="qty" id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" data-q="1" aria-label="Increase">+</button></div></div><label class="fd"><span>Enquiry type</span><select name="type"><option>Retail purchase</option><option>Distribution / trade</option><option>Bulk order</option><option>Price and availability</option></select></label></div>
-<div class="fr2"><label class="fd"><span>Your name</span><input name="n" required autocomplete="name"></label><label class="fd"><span>Phone</span><input name="p" type="tel" required autocomplete="tel"></label></div>
-<div class="fr2"><label class="fd"><span>Email</span><input name="e" type="email" required autocomplete="email"></label><label class="fd"><span>City</span><input name="c" autocomplete="address-level2"></label></div>
-<label class="fd"><span>Message (optional)</span><textarea name="m" placeholder="Pack size, delivery location, anything else we should know"></textarea></label>
-${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confirm I am an adult consumer. Tobacco products are for adults only and smoking is injurious to health.</span></label>' : ""}
-<button class="sb" type="submit">Send enquiry &rarr;</button><small class="n">Opens your email app to send the enquiry to our team.</small></form></div>
-<div class="ok" id="ok"><i>&check;</i><h4>Almost done</h4><p>Your email app should have opened with the enquiry filled in. Just press send.</p><button class="back" type="button" data-back>Back to all products</button></div></aside></div>
+<div class="pdm"><small>${x.tag}</small><h2>${x.n}</h2><p class="ab">${x.about}</p><div class="prc"><b>${x.price[0]}</b><span>${x.price[1]}</span></div><div class="ch">${x.chips.map((c) => `<span>${c}</span>`).join("")}</div><dl class="spec">${x.rows.map((r) => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join("")}</dl>${SEC(x)}${tobacco(i) ? '<p class="wn">Statutory warning: smoking is injurious to health. Tobacco products are intended for adult consumers only.</p>' : ""}</div>
+<aside class="eq" id="eq"><span class="eqk">Interested in this product?</span><h3>${x.n}</h3><div class="eqp"><b>${x.price[0]}</b><span>${x.price[1]}</span></div><button class="sb" type="button" data-eq>Enquiry</button><ul class="eqf"><li>Opens a quick enquiry form</li><li>Our team replies by email</li><li>Distributed across South India</li></ul><div class="eqc"><a href="tel:+914448508024">+91 44 4850 8024</a><a href="mailto:rclretail@gmail.com">rclretail@gmail.com</a></div></aside></div>
 <div class="rl"><h3>${rel.length ? "More in " + C.n : "More products"}</h3><div class="gr">${more.map(([y, j], k) => card(y, j, k)).join("")}</div></div>`;
           top();
-          if (focus)
-            setTimeout(() => {
-              const f = $("#ef");
-              f && f.n.focus({ preventScroll: true });
-            }, 500);
+          if (focus) setTimeout(() => openEq(i), 450);
         };
         const go = (i, f) => {
             view = i;
@@ -1153,6 +1752,7 @@ ${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confir
           const t = e.target,
             g = (s) => t.closest(s);
           let b;
+          if (g("[data-eq]")) return openEq(view);
           if ((b = g("[data-e]"))) return go(+b.dataset.e, true);
           if ((b = g("[data-v]"))) return go(+b.dataset.v);
           if ((b = g("[data-f]"))) {
@@ -1162,10 +1762,6 @@ ${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confir
           if (g("[data-back]")) return home();
           if ((b = g("[data-cat]"))) return home(b.dataset.cat);
           if (g("[data-home]")) return home("all");
-          if ((b = g("[data-q]"))) {
-            const i = $("#qty");
-            i.value = Math.max(1, (+i.value || 1) + +b.dataset.q);
-          }
         });
         V.addEventListener("input", (e) => {
           if (e.target.id === "q") {
@@ -1174,11 +1770,66 @@ ${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confir
             list();
           }
         });
-        V.addEventListener("submit", (e) => {
+        const em = document.createElement("div");
+        em.id = "em";
+        em.hidden = true;
+        em.innerHTML =
+          '<div class="mdb" role="dialog" aria-modal="true" aria-labelledby="emt"><button class="mdx" type="button" data-x aria-label="Close enquiry form">&times;</button><div class="mds" id="mds"></div><div class="mdf" id="mdf"></div></div>';
+        document.body.appendChild(em);
+        let eqI = null,
+          lastF = null;
+        const closeEq = () => {
+          em.hidden = true;
+          document.documentElement.style.overflow = "";
+          lastF && lastF.focus && lastF.focus({ preventScroll: true });
+        };
+        const openEq = (i) => {
+          const x = P[i],
+            d = X[x.k],
+            pre = x.b === "ESSE" ? "ESSE " : x.b === "Imli" ? "Imli " : "";
+          eqI = i;
+          lastF = document.activeElement;
+          $("#mds").style.setProperty("--c", PC[x.k]);
+          em.style.setProperty("--c", PC[x.k]);
+          $("#mds").innerHTML =
+            `<img src="${IM[x.k]}" alt="${x.b} ${x.n} pack"><small>${x.tag}</small><h3>${x.n}</h3><p>${x.about}</p><ul>${d.hl
+              .slice(0, 3)
+              .map((t) => `<li>${t}</li>`)
+              .join("")}</ul>`;
+          $("#mdf").innerHTML =
+            `<div id="efw"><h3 id="emt">Enquire about ${x.n}</h3><p class="lead2">Tell us what you need for <b>${pre}${x.n}</b>. Our team replies by email.</p>
+<form class="frm" id="ef"><div class="fr2"><div class="fd"><span>Quantity</span><div class="qty"><button type="button" data-q="-1" aria-label="Decrease">&minus;</button><input name="qty" id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" data-q="1" aria-label="Increase">+</button></div></div><label class="fd"><span>Enquiry type</span><select name="type"><option>Retail purchase</option><option>Distribution / trade</option><option>Bulk order</option><option>Price and availability</option></select></label></div>
+<div class="fr2"><label class="fd"><span>Your name</span><input name="n" required autocomplete="name"></label><label class="fd"><span>Phone</span><input name="p" type="tel" required autocomplete="tel"></label></div>
+<div class="fr2"><label class="fd"><span>Email</span><input name="e" type="email" required autocomplete="email"></label><label class="fd"><span>City</span><input name="c" autocomplete="address-level2"></label></div>
+<label class="fd"><span>Message (optional)</span><textarea name="m" placeholder="Pack size, delivery location, anything else we should know"></textarea></label>
+${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confirm I am an adult consumer. Tobacco products are for adults only and smoking is injurious to health.</span></label>' : ""}
+<button class="sb" type="submit">Send enquiry &rarr;</button><small class="n">Opens your email app to send the enquiry to our team.</small></form></div>
+<div class="ok" id="ok"><i>&check;</i><h4>Almost done</h4><p>Your email app should have opened with the enquiry filled in. Just press send.</p><button class="back" type="button" data-x>Close</button></div>`;
+          em.hidden = false;
+          document.documentElement.style.overflow = "hidden";
+          em.querySelector(".mdb").scrollTop = 0;
+          setTimeout(() => {
+            const f = $("#ef");
+            f && f.n.focus({ preventScroll: true });
+          }, 60);
+        };
+        em.addEventListener("click", (e) => {
+          const t = e.target;
+          if (t === em || t.closest("[data-x]")) return closeEq();
+          const b = t.closest("[data-q]");
+          if (b) {
+            const i = $("#qty");
+            i.value = Math.max(1, (+i.value || 1) + +b.dataset.q);
+          }
+        });
+        addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && !em.hidden) closeEq();
+        });
+        em.addEventListener("submit", (e) => {
           e.preventDefault();
           const F = e.target,
             d = new FormData(F),
-            a = P[view];
+            a = P[eqI];
           const body = [
             "Product: " +
               (a.b === "Our brand" || a.b === "Food product" ? "" : a.b + " ") +
@@ -1396,6 +2047,32 @@ ${tobacco(i) ? '<label class="ag"><input type="checkbox" required><span>I confir
           }
         });
       })();
+    </script>
+    <script>
+      document.querySelectorAll("nav .ndc").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var d = b.closest(".ndd"),
+            o = d.classList.toggle("open");
+          b.setAttribute("aria-expanded", o);
+        });
+      });
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll("nav .ndd.open").forEach(function (d) {
+          if (!d.contains(e.target)) {
+            d.classList.remove("open");
+            d.querySelector(".ndc").setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+      var hh = document.getElementById("hero"),
+        nn = document.querySelector("nav");
+      function fh() {
+        if (!hh) return;
+        hh.style.paddingTop = innerWidth > 768 ? nn.offsetHeight + "px" : "";
+      }
+      fh();
+      addEventListener("resize", fh);
+      addEventListener("load", fh);
     </script>
   </body>
 </html>
