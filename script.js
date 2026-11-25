@@ -1231,7 +1231,9 @@ import { IM } from "./images-data.js";
           GS = 0.86,
           RY = -0.45,
           GY = RY,
-          imgs = Object.values(IM),
+          imgs = Object.entries(IM)
+  .filter(([key]) => key !== "store")
+  .map(([, src]) => src),
           sideC = [0.141, 0.208, 0.169],
           bx = mk(box(1.15 * PK, 1.44 * PK, 0.14 * PK)),
           tor = mk(torus(R + 0.15, 0.012, 8, 160)),
